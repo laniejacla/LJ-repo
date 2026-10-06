@@ -1,5 +1,5 @@
 <title>Bloom Studio</title>
-<meta name="description" content="Step-by-step picture guides that grow young artists from first crayon lines to real paintings.">
+<meta name="description" content="Step-by-step picture guides and Charlotte Mason picture study that grow young artists from first crayon lines to real paintings.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -188,6 +188,90 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans)}
 .bs-empty{border:1.5px dashed var(--line);border-radius:18px;padding:28px;text-align:center;color:var(--soft)}
 .bs-confirm{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:16px;font-size:.88rem}
 
+
+/* picture study */
+.bs-intro{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:20px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:20px;margin-bottom:14px}
+@media(max-width:800px){.bs-intro{grid-template-columns:minmax(0,1fr)}}
+.bs-intro h2{font-size:1.6rem;margin-bottom:6px}
+.bs-intro p{margin:0;color:var(--soft);max-width:62ch}
+.bs-howto{margin:0;padding:0;list-style:none;counter-reset:h;display:grid;gap:6px}
+.bs-howto li{counter-increment:h;display:flex;gap:10px;align-items:center;font-weight:600;font-size:.92rem}
+.bs-howto li::before{content:counter(h);font-family:var(--display);width:28px;height:28px;border-radius:50%;background:var(--sage-pale);color:var(--moss);display:grid;place-items:center;flex:none}
+.bs-wall{margin-top:22px}
+.bs-wall header{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px;border-bottom:1px solid var(--line);padding-bottom:6px;margin-bottom:12px}
+.bs-wall h3{font-size:1.2rem}
+.bs-wall header span{color:var(--soft);font-size:.85rem}
+.bs-frames{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:18px}
+.bs .bs-frame{border:0;background:none;padding:0;text-align:left;display:flex;flex-direction:column;gap:8px}
+.bs-frame .mat{display:block;background:#F6F2E8;padding:10px;border:6px solid #3A2E22;box-shadow:0 10px 20px -12px rgba(30,20,10,.6);aspect-ratio:4/3.2;overflow:hidden}
+.bs-frame .pic{width:100%;height:100%;object-fit:cover;display:block}
+.bs-frame:hover .mat{border-color:#5A4632}
+.bs-frame .label{display:flex;flex-direction:column;font-size:.84rem;line-height:1.3}
+.bs-frame .label b{font-family:var(--display);font-weight:600;font-size:.98rem}
+.bs-frame .label span{color:var(--soft)}
+.bs-frame em{font-style:normal;color:var(--moss);font-weight:700}
+.bs-frame em.old{color:var(--berry)}
+.bs-noimg{display:flex;align-items:flex-end;padding:10px;min-height:140px;width:100%;height:100%}
+.bs-noimg span{background:rgba(255,255,255,.9);color:#2B2622;border-radius:10px;padding:6px 10px;font-size:.8rem;display:flex;flex-direction:column;gap:2px}
+.bs-noimg a{color:#47533D;font-weight:700}
+.bs-big .bs-noimg,.bs-ref .bs-noimg{aspect-ratio:4/3;border-radius:8px}
+.bs-credit{color:var(--soft);font-size:.78rem;margin-top:20px}
+.bs-visit{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:18px}
+.bs-visit-top{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
+.bs-visit-head h2{font-size:1.6rem}
+.bs-visit-head .meta{color:var(--soft);font-size:.9rem;margin-bottom:14px}
+.bs-about,.bs-study{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:22px;align-items:start}
+@media(max-width:800px){.bs-about,.bs-study{grid-template-columns:minmax(0,1fr)}}
+.bs-big{margin:0;background:#2B241D;border-radius:14px;padding:14px;display:flex;flex-direction:column;gap:10px}
+.bs-big .pic{width:100%;max-height:70vh;object-fit:contain;display:block}
+.bs-big figcaption{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.bs-big figcaption a{color:#E8E0D0;font-size:.82rem}
+.bs-big .bs-btn.ghost{color:#F7F4EA;border-color:rgba(255,255,255,.3);min-height:38px;padding:6px 14px}
+.bs-plaque h3{font-size:1.05rem;margin:14px 0 6px}
+.bs-plaque h3:first-child{margin-top:0}
+.bs-plaque p{margin:0 0 8px;max-width:62ch}
+.bs-ispy{margin:0;padding-left:20px;display:grid;gap:4px}
+.bs-check{list-style:none;margin:0 0 8px;padding:0;display:grid;gap:6px}
+.bs-check label{display:flex;gap:10px;align-items:center;min-height:36px}
+.bs-check input{width:22px;height:22px;accent-color:var(--moss)}
+.bs-facts{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;font-size:.88rem;margin:12px 0}
+.bs-facts dt{color:var(--soft);font-weight:600}
+.bs-facts dd{margin:0}
+.bs-warn{background:var(--clay-pale);border-radius:12px;padding:8px 12px;font-size:.88rem}
+.bs-stages{display:flex;flex-wrap:wrap;gap:6px;list-style:none;margin:0 0 16px;padding:0;counter-reset:s}
+.bs-stages li{counter-increment:s;font-size:.82rem;font-weight:700;padding:5px 12px 5px 6px;border-radius:999px;border:1.5px solid var(--line);display:flex;gap:6px;align-items:center;color:var(--soft)}
+.bs-stages li::before{content:counter(s);width:20px;height:20px;border-radius:50%;background:var(--line-soft);display:grid;place-items:center;font-size:.72rem}
+.bs-stages li.done{border-color:var(--sage);color:var(--ink)}
+.bs-stages li.done::before{background:var(--sage);color:#fff}
+.bs-stages li.now{border-color:var(--fresh);color:var(--ink)}
+.bs-stages li.now::before{background:var(--fresh);color:#fff}
+.bs-curtain{aspect-ratio:4/3;border-radius:14px;background:repeating-linear-gradient(90deg,#6E2A2A 0 18px,#7C3232 18px 36px);display:grid;place-items:center;padding:20px;box-shadow:inset 0 -20px 30px rgba(0,0,0,.25)}
+.bs-curtain div{background:rgba(255,250,240,.95);color:#2B2622;border-radius:16px;padding:16px 18px;max-width:320px;display:flex;flex-direction:column;gap:6px;text-align:center}
+.bs-curtain b{font-family:var(--display);font-size:1.3rem}
+.bs-timer{position:relative;width:120px;height:120px;margin:14px 0}
+.bs-timer svg{width:120px;height:120px}
+.bs-timer b{position:absolute;inset:0;display:grid;place-items:center;font-family:var(--display);font-size:1.5rem;font-variant-numeric:tabular-nums}
+.bs-label{display:block;font-weight:700;font-size:.88rem;margin:10px 0 4px}
+.bs textarea{width:100%;font:inherit;color:var(--ink);background:var(--paper);border:1.5px solid var(--line);border-radius:12px;padding:10px 12px;resize:vertical}
+.bs-quote{border-left:4px solid var(--sage);padding-left:12px;font-style:italic;white-space:pre-wrap}
+.bs-done{font-weight:700;color:var(--moss);align-self:center}
+.bs-paintit{grid-template-columns:minmax(0,1fr) 220px}
+@media(max-width:800px){.bs-paintit{grid-template-columns:minmax(0,1fr)}}
+.bs-twin{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px;align-items:start}
+@media(max-width:560px){.bs-twin{grid-template-columns:minmax(0,1fr)}}
+.bs-ref{position:relative;background:#2B241D;border-radius:16px;padding:8px;aspect-ratio:1;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.bs-ref .pic{max-width:100%;max-height:100%;object-fit:contain;display:block}
+.bs-grid3{position:absolute;inset:8px;pointer-events:none;background:
+  linear-gradient(90deg,transparent calc(33.33% - 1px),rgba(226,103,58,.85) calc(33.33% - 1px) calc(33.33% + 1px),transparent calc(33.33% + 1px) calc(66.66% - 1px),rgba(226,103,58,.85) calc(66.66% - 1px) calc(66.66% + 1px),transparent calc(66.66% + 1px)),
+  linear-gradient(180deg,transparent calc(33.33% - 1px),rgba(226,103,58,.85) calc(33.33% - 1px) calc(33.33% + 1px),transparent calc(33.33% + 1px) calc(66.66% - 1px),rgba(226,103,58,.85) calc(66.66% - 1px) calc(66.66% + 1px),transparent calc(66.66% + 1px))}
+.bs-padsheet .bs-grid3{inset:0}
+.bs-zoom{position:fixed;inset:0;z-index:70;background:rgba(20,16,12,.94);display:flex;align-items:center;justify-content:center;padding:calc(48px + env(safe-area-inset-top,0px)) 16px calc(16px + env(safe-area-inset-bottom,0px))}
+.bs-zoom .pic{max-width:100%;max-height:100%;object-fit:contain}
+.bs-zoom-x{position:absolute;top:calc(10px + env(safe-area-inset-top,0px));right:16px;border:0;border-radius:999px;padding:8px 16px;font:700 .9rem var(--sans);background:#F7F4EA;color:#2B2622;cursor:pointer}
+.bs-journal{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+.bs-journal article{border:1px solid var(--line);border-radius:14px;padding:12px;background:var(--card)}
+.bs-journal b{font-family:var(--display);font-weight:600}
+.bs-journal p{margin:4px 0 0;font-size:.88rem;white-space:pre-wrap}
 /* celebration */
 .bs-party{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:50}
 .bs-party i{position:absolute;top:-20px;width:14px;height:10px;border-radius:50% 0;animation:bsfall 2.4s ease-in forwards}
@@ -541,7 +625,7 @@ const TECHS=Object.fromEntries(TECH.map(t=>[t.id,t]));
 /* ───────────── state ───────────── */
 const KEY="bloom-studio:v1";
 const DEF={view:"studio",sub:"puppy",cat:"Animals",lvl:1,tech:"draw",emo:"happy",extra:"none",mood:"natural",mine:"lavender",scene:"auto",step:0,mode:"step",artist:"",
-  done:[],labWins:0};
+  done:[],labWins:0,ps:{id:null,tab:"about",stage:0,mins:3,filter:"ph",grid:false},studied:{},notes:{}};
 let st=Object.assign({},DEF);
 try{const raw=localStorage.getItem(KEY);if(raw)st=Object.assign(st,JSON.parse(raw))}catch(e){}
 if(!SUB[st.sub])st.sub="puppy";
@@ -756,12 +840,12 @@ function draw(){
   <header class="bs-top">
     <div class="bs-brand">${logo}<div><h1>Bloom Studio</h1><p>Picture guides that grow little artists</p></div></div>
     <nav class="bs-tabs" role="tablist" aria-label="Sections">
-      ${[["studio","Studio"],["lab","Color Lab"],["garden","My Gallery"]].map(([k,t])=>`<button role="tab" data-view="${k}" aria-selected="${o.view===k}">${t}</button>`).join("")}
+      ${[["studio","Studio"],["study","Picture Study"],["lab","Color Lab"],["garden","My Art"]].map(([k,t])=>`<button role="tab" data-view="${k}" aria-selected="${o.view===k}">${t}</button>`).join("")}
     </nav>
     <label class="bs-artist" for="bs-artist">Artist <input id="bs-artist" value="${esc(o.artist)}" placeholder="Your name" maxlength="24" autocomplete="off"></label>
   </header>
-  ${o.view==="studio"?studio(b):o.view==="lab"?lab():garden()}`;
-  wire(b);
+  ${o.view==="studio"?studio(b):o.view==="study"?study():o.view==="lab"?lab():garden()}`;
+  wire(b);wireImgs();
 }
 
 function studio(b){
@@ -926,6 +1010,331 @@ function wheelSvg(){
   return`<svg viewBox="-6 -6 212 212" role="img" aria-label="Color wheel">${s}</svg>`;
 }
 
+/* ───────────── Picture Study ─────────────
+   Charlotte Mason picture study: look quietly, picture it with eyes closed, tell
+   it back, look again, then try painting it. Every painting here is in the public
+   domain and comes from Wikimedia Commons. The app looks for a copy bundled in
+   paintings/<id>.jpg first and falls back to Commons. */
+const ARTISTS={
+ luna:{n:"Juan Luna",life:"1857–1899",from:"Philippines",ph:true,
+  bio:"Born in Badoc, Ilocos Norte. He studied art in Manila, then in Madrid and Rome. In 1884 his huge painting Spoliarium won a gold medal in Madrid, and Filipinos everywhere celebrated. He loved strong light and deep shadows."},
+ hidalgo:{n:"Félix Resurrección Hidalgo",life:"1855–1913",from:"Philippines",ph:true,
+  bio:"Born in Binondo, Manila. He won a silver medal in Madrid in 1884, the same year as his friend Juan Luna. He spent most of his life painting in Paris and was known for soft, glowing colors."},
+ amorsolo:{n:"Fernando Amorsolo",life:"1892–1972",from:"Philippines",ph:true,
+  bio:"The first National Artist of the Philippines. He is famous for sunny paintings of the countryside, rice fields and Filipina women, with sunlight glowing from behind the people he painted."},
+ delarosa:{n:"Fabián de la Rosa",life:"1869–1937",from:"Philippines",ph:true,
+  bio:"Called a master of everyday scenes. He painted farmers, beaches and city life in Manila, taught many young artists, and became director of the University of the Philippines School of Fine Arts. He was a relative and early teacher of Fernando Amorsolo."},
+ flores:{n:"Simón Flores y de la Rosa",life:"1839–1902",from:"Philippines",ph:true,
+  bio:"A painter from Pampanga who studied at the first art school in Manila. In 1876 he won a silver medal in Philadelphia, one of the first international prizes for a Filipino painter. He loved painting families and home life."},
+ domingo:{n:"Damián Domingo",life:"c. 1796–1834",from:"Philippines",ph:true,
+  bio:"Often called the father of Philippine painting. In 1821 he opened the first art academy in the Philippines in his home in Tondo. His small watercolors show the people of the islands in their everyday clothes."},
+ vangogh:{n:"Vincent van Gogh",life:"1853–1890",from:"Netherlands",
+  bio:"A Dutch painter who only painted for about ten years but made more than 800 paintings. He used thick paint, bright colors and swirling brushstrokes. He sold very few paintings while he was alive."},
+ monet:{n:"Claude Monet",life:"1840–1926",from:"France",
+  bio:"A French painter who loved painting outdoors to catch light and weather as they changed. One of his paintings gave the name to a whole art movement: Impressionism."},
+ renoir:{n:"Pierre-Auguste Renoir",life:"1841–1919",from:"France",
+  bio:"A French Impressionist and friend of Monet. He loved painting children, gardens and happy people, with soft feathery brushstrokes."},
+ cassatt:{n:"Mary Cassatt",life:"1844–1926",from:"United States",
+  bio:"An American painter who lived in Paris and painted with the Impressionists. She is loved for her tender paintings of mothers and children."},
+ hokusai:{n:"Katsushika Hokusai",life:"1760–1849",from:"Japan",
+  bio:"A Japanese artist who made thousands of pictures over his long life. He carved his designs into wooden blocks so that many copies could be printed."},
+ durer:{n:"Albrecht Dürer",life:"1471–1528",from:"Germany",
+  bio:"A German artist who studied nature very carefully. He was a painter, a printmaker and a mathematician, and he drew animals and plants with amazing detail."},
+ vermeer:{n:"Johannes Vermeer",life:"1632–1675",from:"Netherlands",
+  bio:"A Dutch painter who worked slowly and made only about 35 paintings that we know of. He was a master of soft light coming through a window."},
+ millet:{n:"Jean-François Millet",life:"1814–1875",from:"France",
+  bio:"A French painter who grew up on a farm. He painted farmers and field workers with great respect, showing that ordinary work is beautiful."},
+ bruegel:{n:"Pieter Bruegel the Elder",life:"c. 1525–1569",from:"Flanders (today's Belgium)",
+  bio:"A Flemish painter famous for busy village scenes full of tiny people working and playing. Every time you look you find something new."},
+ constable:{n:"John Constable",life:"1776–1837",from:"England",
+  bio:"An English painter who loved the countryside where he grew up. He made many sketches of clouds and skies to paint them just right."}
+};
+/*PAINTINGS-START*/
+const PAINTINGS=[
+ {id:"spoliarium",a:"luna",t:"Spoliarium",y:"1884",m:"Oil on canvas, 4.22 × 7.67 m",where:"National Museum of Fine Arts, Manila",file:"Juan Luna Spoliarium.jpg",older:true,
+  pal:["#2a1c14","#6b4a2e","#b0794a","#d9b48a","#8f2a1e"],
+  story:"This is the biggest painting in the Philippines, almost as long as two cars. It shows a sad scene from ancient Rome: the room under the arena where fallen gladiators were taken. Juan Luna painted it in Rome and won a gold medal in Madrid. José Rizal gave a famous speech praising him, and many Filipinos saw the painting as a picture of their own struggle.",
+  look:["The crowd peeking in on the left","A woman kneeling in the dark","Bright light falling on the center","The glow of fire at the back"],
+  talk:["Where is the brightest part of the painting? Why did Luna put light there?","How does this painting make you feel?"],
+  tryit:"Try a painting with one bright spot and dark corners. Paint the whole paper brown first, then add the light last."},
+ {id:"bulaquena",a:"luna",t:"Una Bulaqueña",y:"1895",m:"Oil on canvas",where:"National Museum of Fine Arts, Manila",file:"Una Bulaqueña.jpg",
+  pal:["#1f1a16","#4a3b2e","#e8e0d0","#c9a27c","#7d1f24"],
+  story:"A young woman from Bulacan stands calmly in her baro't saya with a delicate, see-through pañuelo over her shoulders. Luna painted her against a dark background so she seems to glow. It is one of the most loved portraits of a Filipina.",
+  look:["The thin, see-through cloth","Her calm face and eyes","The dark background","The folds of her skirt"],
+  talk:["What do you think she is thinking about?","How did Luna make the cloth look see-through?"],
+  tryit:"To paint see-through cloth, paint what is behind it first, then add thin white strokes on top."},
+ {id:"espana",a:"luna",t:"España y Filipinas",y:"1886",m:"Oil on canvas",where:"Luna painted several versions, kept in Manila, Singapore and Madrid",file:"Espana y Filipinas by Juan Luna.jpg",
+  pal:["#d9c49a","#a8b6c4","#8a6a4a","#f0e6d2","#c75b39"],
+  story:"Two women walk up a flight of stairs together. One stands for Spain and the other for the Philippines. Spain points the way toward the light at the top. A painting where people stand for bigger ideas is called an allegory.",
+  look:["The steps going up","The arm pointing ahead","Their clothes and colors","The light at the top"],
+  talk:["Which woman do you think is the Philippines? Why?","If you painted the Philippines as a person today, what would she wear?"],
+  tryit:"Draw steps going up with lines that get closer together near the top. That makes them look far away."},
+ {id:"normandy",a:"luna",t:"Picnic in Normandy",y:"c. 1880s",m:"Oil on canvas",where:"Painted while Luna lived in France",file:"Picnic in Normandy by Juan Luna.jpg",
+  pal:["#4f6b3a","#9fb07a","#e6dcc2","#8a6d4f","#5d7f9c"],
+  story:"While living in France, Luna painted this relaxed day outdoors in the Normandy countryside. Instead of a grand history scene, it shows friends and family resting among the trees. It shows how he learned from the French painters around him.",
+  look:["The people resting on the grass","Light coming through the trees","Food and cloth on the ground","Green shades in the leaves"],
+  talk:["What would you bring to this picnic?","How many different greens can you find?"],
+  tryit:"Mix three greens: one with more yellow, one with more blue and one with a dot of red. Use all three in your trees."},
+ {id:"rizal",a:"hidalgo",t:"Portrait of José Rizal",y:"1883",m:"Oil on canvas",where:"Philippines",file:"Jose Rizal 1883 oil portrait by Felix Resurreccion Hidalgo.jpg",
+  pal:["#1e1a17","#3b3029","#c79b7a","#e9dccb","#5a4636"],
+  story:"Hidalgo painted his friend José Rizal when they were both young Filipinos in Europe. Rizal later became the national hero of the Philippines. A portrait is a painting of a real person, and this one helps us know what Rizal looked like.",
+  look:["His eyes and expression","His dark suit and white collar","How the light falls on his face","The plain background"],
+  talk:["What can you tell about Rizal from this painting?","Who would you like to paint a portrait of?"],
+  tryit:"For a face, start with an oval, then draw a light line across the middle for the eyes. Eyes sit halfway down the head!"},
+ {id:"lanzones",a:"hidalgo",t:"La vendedora de lanzones",y:"Late 1800s",m:"Oil on canvas",where:"Museo del Prado, Madrid",file:"La vendedora de lanzones, de Félix Resurrección Hidalgo.jpg",
+  pal:["#e2d3a8","#b49a5e","#6e8a52","#c7b8a0","#3d3328"],
+  story:"The title means The Lanzones Seller. It shows a woman selling lanzones, a sweet fruit from the Philippines. Hidalgo painted it far away in Europe, remembering the markets and fruits of home.",
+  look:["The basket of lanzones","What the seller is wearing","Plants and trees around her","Where the light comes from"],
+  talk:["Have you ever eaten lanzones? What do they taste like?","What would you sell if you had a stall?"],
+  tryit:"Paint round fruits with a light side and a dark side. Leave a tiny white dot for shine."},
+ {id:"palay",a:"amorsolo",t:"Maiden with Palay Stalks",y:"20th century",m:"Oil on canvas",where:"Philippines",file:"Untitled (Maiden with Palay Stalks) - Fernando Amorsolo.jpg",
+  pal:["#f2d48b","#d9a24a","#7e9b4e","#f6eed6","#8c5a3a"],
+  story:"A young woman holds stalks of palay, the rice plant, in the warm sunshine. Amorsolo loved to show the beauty of farm life, and he was a master of backlighting: the sun shines from behind so the edges of the person glow.",
+  look:["The golden rice stalks","Sunlight glowing at the edges","Her smile and clothes","The soft background"],
+  talk:["Why do you think Amorsolo loved painting the countryside?","What time of day do you think it is?"],
+  tryit:"For a glowing edge, paint the person, then add a thin line of yellow-white along the side facing the sun."},
+ {id:"ricefield",a:"delarosa",t:"Women Working in a Rice Field",y:"1927",m:"Oil on panel",where:"Philippines",file:"Fabian de la Rosa, Women working in a rice field.jpg",
+  pal:["#8fa35c","#c9c27a","#e7dfc0","#5b6b3c","#7c9cb4"],
+  story:"Women bend over a flooded rice field, planting or tending the young rice. Rice is the most important food in the Philippines, and painters have shown this hard, shared work for more than a hundred years.",
+  look:["The water in the field","How the women are bending","Their hats","The faraway trees and sky"],
+  talk:["Where does the rice on your plate come from?","How would it feel to work in the field all day?"],
+  tryit:"Paint water as a lighter strip with a few horizontal lines. Reflections are always straight below the object."},
+ {id:"pasay",a:"delarosa",t:"Pasay Beach, Manila",y:"Early 1900s",m:"Oil",where:"Philippines",file:"Fabian de la Rosa, Pasay Beach, Manila.jpg",
+  pal:["#9bb9c9","#e9e2cf","#d6c49c","#6a8aa0","#4b5a3a"],
+  story:"Long ago, Pasay had a sandy beach on Manila Bay where families went to cool off. Fabián de la Rosa painted it so we can still visit it today, more than a hundred years later.",
+  look:["The line where sky meets sea","People or boats","The color of the sand","Clouds in the sky"],
+  talk:["Have you been to a beach? How was it like this one?","What sounds do you think you would hear here?"],
+  tryit:"Paint the sky first, then the sea a little darker, then the sand. Keep the horizon line straight!"},
+ {id:"chickens",a:"flores",t:"Feeding the Chickens",y:"c. 1890s",m:"Oil on canvas",where:"Philippines",file:"Feeding the Chicken by Simon Flores.jpg",
+  pal:["#c8a46a","#7a5a3a","#e5d8be","#a33d2b","#5f6b3e"],
+  story:"A simple, everyday moment: someone feeding chickens at home. Simón Flores liked painting real families and homes in Pampanga, so his pictures show us how people lived long ago.",
+  look:["The chickens and how they move","What the person is wearing","The house and yard","The colors of the feathers"],
+  talk:["What chores do you help with at home?","How are chickens fed at your lola's house or in your neighborhood?"],
+  tryit:"Draw a chicken with a big oval body, a small circle head, a triangle beak and a fan tail."},
+ {id:"tipos",a:"domingo",t:"Tipos del País",y:"1820s",m:"Watercolor",where:"Collections in the Philippines and abroad",file:"Set of Tipos del País watercolors.jpg",
+  pal:["#e8dcc0","#a33a2a","#2f5a8a","#d2b07a","#3d3a30"],
+  story:"Tipos del País means people of the country. These small watercolors show Filipinos of the 1800s in their everyday clothes: vendors, farmers, ladies and soldiers. Travelers bought them as souvenirs, like postcards, and today they show us how people dressed long ago.",
+  look:["The patterns on the clothes","What each person is holding","Bright reds and blues","The plain background"],
+  talk:["Which person would you like to be? Why?","How are these clothes different from yours?"],
+  tryit:"Paint a person in your family in their favorite clothes. Add a plain background like Domingo did."},
+ {id:"starry",a:"vangogh",t:"The Starry Night",y:"1889",m:"Oil on canvas",where:"Museum of Modern Art, New York",file:"Van Gogh - Starry Night - Google Art Project.jpg",
+  pal:["#1d3b6e","#3f6fb0","#f2d35b","#2a3a2a","#9fc4d8"],
+  story:"Van Gogh painted the view from his window at night, but he painted it during the day, from memory and imagination. The sky swirls with wind and stars, a dark cypress tree reaches up like a flame, and a quiet village sleeps below.",
+  look:["The big swirl in the middle of the sky","The tall dark tree","The moon and stars","The church steeple"],
+  talk:["Why do you think the sky looks like it is moving?","What sounds might you hear on this night?"],
+  tryit:"Use short curved strokes, side by side, all going around the same way. Don't blend them!"},
+ {id:"sunflowers",a:"vangogh",t:"Sunflowers",y:"1888",m:"Oil on canvas",where:"National Gallery, London",file:"Vincent van Gogh - Sunflowers (1888, National Gallery London).jpg",
+  pal:["#e9b733","#c47a1e","#f3dc7a","#6b5a2a","#8aa04a"],
+  story:"Van Gogh painted sunflowers to decorate a room for his friend, the painter Paul Gauguin. Almost everything is yellow: the flowers, the vase and the wall. He showed that a painting can be bright using mostly one color.",
+  look:["Flowers that are fresh and flowers that are old","The yellow vase","His signature on the vase","Thick paint you could almost touch"],
+  talk:["How many shades of yellow can you find?","Which flower is your favorite? Why?"],
+  tryit:"Make yellow light with white and dark with a dot of red and blue. Paint the whole picture in yellows!"},
+ {id:"impression",a:"monet",t:"Impression, Sunrise",y:"1872",m:"Oil on canvas",where:"Musée Marmottan Monet, Paris",file:"Monet - Impression, Sunrise.jpg",
+  pal:["#7f95a0","#a6b3b0","#e2683b","#3e4a55","#c9b8a0"],
+  story:"Monet painted the harbor of his hometown early in the morning, with an orange sun in the mist. A critic made fun of the title and called the painters Impressionists. The name stuck, and it became one of the most famous art movements in the world.",
+  look:["The orange sun and its reflection","Small dark boats","Ships hidden in the mist","Quick brushstrokes in the water"],
+  talk:["What does an impression mean?","Is it early morning or evening? How can you tell?"],
+  tryit:"Paint fast! Use gray-blue for mist and one bright orange dot for the sun with short orange strokes under it."},
+ {id:"parasol",a:"monet",t:"Woman with a Parasol",y:"1875",m:"Oil on canvas",where:"National Gallery of Art, Washington, D.C.",file:"Claude Monet - Woman with a Parasol - Madame Monet and Her Son - Google Art Project.jpg",
+  pal:["#8fb3d9","#e9eef2","#7a9a4a","#cfd8a8","#4a5a6a"],
+  story:"Monet painted his wife Camille and their son Jean on a windy summer day. We look up at Camille from below, with the sky behind her. You can almost feel the breeze in her veil and the grass.",
+  look:["The veil blowing in the wind","Jean standing in the grass","Blue and green in the white dress","Clouds in the sky"],
+  talk:["Which way is the wind blowing? How do you know?","Why would Monet paint shadows on white in blue?"],
+  tryit:"Look for colors in white things. Shadows on a white dress can be painted light blue or lilac."},
+ {id:"wateringcan",a:"renoir",t:"A Girl with a Watering Can",y:"1876",m:"Oil on canvas",where:"National Gallery of Art, Washington, D.C.",file:"Auguste Renoir - A Girl with a Watering Can - Google Art Project.jpg",
+  pal:["#2f4f7f","#e8d3c0","#7a9a52","#d97a6a","#f0e6c8"],
+  story:"A little girl in a blue dress stands in a garden path holding a watering can. Renoir painted the flowers and leaves with soft, feathery strokes, so the garden seems to shimmer around her.",
+  look:["Her blue dress and red bow","The flowers she is holding","The garden path","Soft, fuzzy edges"],
+  talk:["What do you think she is going to water?","How is this garden like a garden you know?"],
+  tryit:"Use small dabs of color instead of lines for flowers and leaves. Let the dabs touch and overlap."},
+ {id:"childsbath",a:"cassatt",t:"The Child's Bath",y:"1893",m:"Oil on canvas",where:"Art Institute of Chicago",file:"Mary Cassatt - The Child's Bath - Google Art Project.jpg",
+  pal:["#e3d5c3","#6a8a6a","#c98a6a","#f2ece0","#3a4a5a"],
+  story:"A mother gently washes her child's feet in a basin. We look down at them from above, an idea Cassatt learned from Japanese prints. The striped dress and patterned rug make the quiet moment lively.",
+  look:["The stripes on the dress","The patterned rug","The water in the basin","How the child holds on"],
+  talk:["How does the mother feel about her child?","What do you do with your family that feels like this?"],
+  tryit:"Draw from above: look down at your shoes or a cup from a chair and draw what you see."},
+ {id:"greatwave",a:"hokusai",t:"The Great Wave off Kanagawa",y:"c. 1830–32",m:"Woodblock print",where:"Copies in many museums around the world",file:"Katsushika Hokusai - The Great Wave off the Coast of Kanagawa.jpg",
+  pal:["#1f3a6a","#4f7fa8","#efe6d0","#c9b48a","#8a9aa8"],
+  story:"A giant wave curls over three boats while Mount Fuji sits small and calm in the distance. Hokusai made it as a print, so thousands of copies were made. The deep blue came from a new paint called Prussian blue.",
+  look:["The claws of foam on the wave","Mount Fuji, small and white","The boats and the rowers","How the small wave looks like a mountain"],
+  talk:["Do you think the boats will be safe?","Why is the mountain so small?"],
+  tryit:"Paint the wave in blues, then add white foam with a small brush in little curling fingers."},
+ {id:"hare",a:"durer",t:"Young Hare",y:"1502",m:"Watercolor and gouache",where:"Albertina, Vienna",file:"Albrecht Dürer - Hare, 1502 - Google Art Project.jpg",
+  pal:["#8a6a45","#c9a878","#3d2e20","#efe6d4","#a88a62"],
+  story:"More than 500 years ago, Dürer painted this hare so carefully that you can almost count every hair. He probably looked at a real hare in his studio. Look closely at the eye: you can see the reflection of a window in it!",
+  look:["The window reflected in the eye","Each long whisker","Fur going in different directions","The shadow under the hare"],
+  talk:["How long do you think this took to paint?","What animal would you like to paint this carefully?"],
+  tryit:"Paint the body in a light brown first. When it's dry, add hundreds of tiny strokes for fur, all going the way the hair grows."},
+ {id:"pearl",a:"vermeer",t:"Girl with a Pearl Earring",y:"c. 1665",m:"Oil on canvas",where:"Mauritshuis, The Hague",file:"Johannes Vermeer - Girl with a Pearl Earring - 670 - Mauritshuis.jpg",
+  pal:["#1a1a1e","#2d4f8a","#e8c56a","#e2c3a4","#f4f0e6"],
+  story:"A girl turns to look at us over her shoulder. She wears a blue and yellow turban and a big shining pearl. The blue paint was made from a precious stone called lapis lazuli. Nobody knows who she was.",
+  look:["The shine on the pearl","The blue and yellow turban","Light on her lips and eyes","The dark background"],
+  talk:["What do you think she was about to say?","Why do you think she turned around?"],
+  tryit:"Paint a dark background first. Then paint a face with the light side bright and the other side in shadow."},
+ {id:"gleaners",a:"millet",t:"The Gleaners",y:"1857",m:"Oil on canvas",where:"Musée d'Orsay, Paris",file:"Jean-François Millet - Gleaners - Google Art Project.jpg",
+  pal:["#d9c48a","#a88a52","#5a6a7a","#8a4a3a","#e8dcc0"],
+  story:"After the harvest, three poor women pick up the leftover grains of wheat one by one. Far behind them are big stacks of grain. Millet wanted people to respect hard workers. It is like gleaning the last grains of rice after a Filipino harvest.",
+  look:["The three women bending","The huge haystacks far away","Their red, blue and yellow hats","The golden field"],
+  talk:["Why are the women picking up grains?","How is this like rice harvest in the Philippines?"],
+  tryit:"Make people in the front big and things far away small and pale. That makes a picture look deep."},
+ {id:"hunters",a:"bruegel",t:"Hunters in the Snow",y:"1565",m:"Oil on wood",where:"Kunsthistorisches Museum, Vienna",file:"Pieter Bruegel the Elder - Hunters in the Snow (Winter) - Google Art Project.jpg",
+  pal:["#e8e8e2","#7f9a9a","#2a2a24","#8a6a4a","#a8c0c0"],
+  story:"Tired hunters and their dogs walk home through the snow. Below them, people skate and play on frozen ponds. Bruegel painted it as part of a series about the times of the year. Most Filipino children have never seen snow, so this is a great window into winter.",
+  look:["The hunters and dogs","Skaters on the ice","Birds in the bare trees","A fire by the inn"],
+  talk:["How many people can you count?","What would you play if you were there?"],
+  tryit:"Paint snow with white, light gray and a little blue. Bare trees are dark lines that split like a Y."},
+ {id:"haywain",a:"constable",t:"The Hay Wain",y:"1821",m:"Oil on canvas",where:"National Gallery, London",file:"John Constable - The Hay Wain (1821).jpg",
+  pal:["#8aa0b8","#e8e4d8","#4a5a2a","#8a7a4a","#2e3a24"],
+  story:"A wooden cart called a hay wain crosses a shallow river while a dog watches. Constable painted the countryside where he grew up in England. He made many studies of clouds so his skies would look real.",
+  look:["The dog on the riverbank","The horses in the water","The cottage on the left","The big white clouds"],
+  talk:["Where do you think the cart is going?","What season is it? How can you tell?"],
+  tryit:"Paint clouds with a dry brush: soft white tops and gray-lilac bottoms."}
+];
+/*PAINTINGS-END*/
+const PAI=Object.fromEntries(PAINTINGS.map(p=>[p.id,p]));
+const wm=(file,w)=>`https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(file)}?width=${w}`;
+const wmPage=file=>`https://commons.wikimedia.org/wiki/File:${encodeURIComponent(file.replace(/ /g,"_"))}`;
+const paintImg=(p,cls,w=900)=>`<img class="${cls}" data-pid="${p.id}" alt="${esc(p.t)} by ${esc(ARTISTS[p.a].n)}" loading="lazy" src="paintings/${p.id}.jpg" data-alt-src="${wm(p.file,w)}">`;
+function imgFallback(img){
+  if(img.dataset.altSrc&&!img.dataset.tried){img.dataset.tried="1";img.src=img.dataset.altSrc;return}
+  const p=PAI[img.dataset.pid];if(!p)return;
+  const d=document.createElement("div");d.className="bs-noimg "+img.className;
+  d.style.background=`linear-gradient(135deg,${p.pal.join(",")})`;
+  d.innerHTML=`<span><b>${esc(p.t)}</b><a href="${wmPage(p.file)}" target="_blank" rel="noopener">Open the painting</a></span>`;
+  img.replaceWith(d);
+}
+function wireImgs(){root.querySelectorAll("img[data-pid]").forEach(img=>{
+  img.addEventListener("error",()=>imgFallback(img));
+  if(img.complete&&img.naturalWidth===0&&img.getAttribute("src"))imgFallback(img)})}
+
+/* Fit a red-yellow-blue-white-black recipe to any color in a painting. */
+const FIT={};
+function fitRecipe(h){
+  if(FIT[h])return FIT[h];const V=[0,.5,1,2,3,4,6];const T=rgbOf(h);let best=null,bd=9;
+  for(const R of V)for(const Y of V)for(const B of V)for(const W of V)for(const K of V){
+    const n=R+Y+B+W+K;if(!n)continue;const m=rgbOf(mixParts({R,Y,B,W,K}));
+    const d=Math.sqrt(m.reduce((s,v,i)=>s+(v-T[i])**2,0))+n*.0015;
+    if(d<bd){bd=d;best={R,Y,B,W,K}}}
+  const rec=Object.entries(best).filter(([,n])=>n>0).map(([k,n])=>k+n).join(" ");
+  return FIT[h]={rec,hex:mixParts(best),score:closeness(mixParts(best),h)};
+}
+function fitCard(h){const f=fitRecipe(h);const p=parse(f.rec);
+  const parts=Object.entries(p).filter(([,n])=>n>0).map(([c,n])=>{const sz=n<1?9:Math.min(26,10+n*4);
+    return`<span style="display:inline-flex;align-items:center;gap:4px"><i class="bs-drop" style="width:${sz}px;height:${sz}px;background:${PAINTS[c].hex}"></i>${n<1?"a dot of "+PAINTS[c].n:n+" "+PAINTS[c].n}</span>`}).join(`<span aria-hidden="true">+</span>`);
+  return`<div class="bs-recipe"><i class="res" style="background:linear-gradient(90deg,${h} 50%,${f.hex} 50%)" title="Left: painting. Right: your mix."></i><b>${f.score>=90?"Close match":"Nearest mix"}</b><div><div class="bs-drops">${parts}</div><div class="why">Left half is the painting, right half is the mix.</div></div></div>`}
+
+const psTimer={iv:0,end:0};
+function stopTimer(){if(psTimer.iv){clearInterval(psTimer.iv);psTimer.iv=0}}
+
+function study(){
+  const ps=st.ps;const p=ps.id&&PAI[ps.id];
+  return p?paintingView(p):galleryView();
+}
+function galleryView(){
+  const ps=st.ps;const list=PAINTINGS.filter(p=>ps.filter==="all"||(ps.filter==="ph")===!!ARTISTS[p.a].ph);
+  const artists=[...new Set(list.map(p=>p.a))];
+  return`<section class="bs-museum">
+   <div class="bs-intro">
+     <div><h2>Picture Study</h2>
+     <p>Visit real paintings by Filipino masters and famous artists around the world. Pick one painting a week, look at it slowly, tell it back, and then try painting it yourself. That is how Charlotte Mason taught children to love art.</p></div>
+     <ol class="bs-howto">${["Look quietly for a few minutes","Close your eyes and picture it","Tell back everything you remember","Look again, then paint it"].map(x=>`<li>${x}</li>`).join("")}</ol>
+   </div>
+   <div class="bs-chips" role="group" aria-label="Which paintings">${[["ph","Filipino masters"],["world","World masters"],["all","All paintings"]].map(([k,t])=>`<button class="bs-chip" data-psfilter="${k}" aria-pressed="${ps.filter===k}">${t}</button>`).join("")}</div>
+   ${artists.map(a=>{const A=ARTISTS[a];return`<div class="bs-wall">
+     <header><h3>${esc(A.n)}</h3><span>${esc(A.life)} · ${esc(A.from)}</span></header>
+     <div class="bs-frames">${list.filter(p=>p.a===a).map(p=>`<button class="bs-frame" data-paint="${p.id}">
+       <span class="mat">${paintImg(p,"pic",500)}</span>
+       <span class="label"><b>${esc(p.t)}</b><span>${esc(p.y)}${st.studied[p.id]?` · <em>Studied</em>`:""}${p.older?` · <em class="old">Ages 9+</em>`:""}</span></span></button>`).join("")}</div></div>`}).join("")}
+   <p class="bs-credit">All paintings are in the public domain. Images from Wikimedia Commons.</p>
+  </section>`;
+}
+function paintingView(p){
+  const ps=st.ps,A=ARTISTS[p.a];
+  const tabs=[["about","About"],["study","Picture study"],["paint","Paint it"]];
+  return`<section class="bs-visit">
+   <div class="bs-visit-top"><button class="bs-btn ghost" data-psback>All paintings</button>
+     <div class="bs-views" role="tablist" aria-label="Painting view">${tabs.map(([k,t])=>`<button role="tab" data-pstab="${k}" aria-selected="${ps.tab===k}">${t}</button>`).join("")}</div></div>
+   <div class="bs-visit-head"><h2>${esc(p.t)}</h2><div class="meta">${esc(A.n)} · ${esc(p.y)} · ${esc(p.m)}</div></div>
+   ${ps.tab==="about"?aboutView(p):ps.tab==="study"?studyView(p):paintItView(p)}
+  </section>`;
+}
+function aboutView(p){
+  const A=ARTISTS[p.a];
+  return`<div class="bs-about">
+    <figure class="bs-big">${paintImg(p,"pic",1200)}<figcaption><button class="bs-btn ghost" data-zoom>See it big</button><a href="${wmPage(p.file)}" target="_blank" rel="noopener">Image source</a></figcaption></figure>
+    <div class="bs-plaque">
+      ${p.older?`<p class="bs-warn">This painting shows a sad scene. It is best for children 9 and up with a grown-up nearby.</p>`:""}
+      <h3>The story</h3><p>${esc(p.story)}</p>
+      <h3>Can you find…</h3><ul class="bs-ispy">${p.look.map(l=>`<li>${esc(l)}</li>`).join("")}</ul>
+      <h3>About ${esc(A.n)}</h3><p>${esc(A.bio)}</p>
+      <dl class="bs-facts"><dt>Painted</dt><dd>${esc(p.y)}</dd><dt>Made with</dt><dd>${esc(p.m)}</dd><dt>Where it is</dt><dd>${esc(p.where)}</dd></dl>
+      <div class="bs-nav"><button class="bs-btn" data-pstab="study">Start picture study</button><button class="bs-btn ghost" data-pstab="paint">Paint it</button></div>
+    </div></div>`;
+}
+function studyView(p){
+  const ps=st.ps,stage=ps.stage,note=st.notes[p.id]||"";
+  const steps=["Look","Picture it","Tell it back","Look again","Talk about it"];
+  const bar=`<ol class="bs-stages">${steps.map((s,i)=>`<li class="${i<stage?"done":i===stage?"now":""}">${s}</li>`).join("")}</ol>`;
+  let body="";
+  if(stage===0)body=`<div class="bs-study"><figure class="bs-big">${paintImg(p,"pic",1200)}</figure>
+    <div class="bs-plaque"><h3>Look quietly</h3><p>Look at every part of the painting: the corners, the middle, the colors and the little details. Try to keep the whole picture in your mind. No talking yet!</p>
+    <div class="bs-chips" role="group" aria-label="How long">${[2,3,5].map(m=>`<button class="bs-chip" data-mins="${m}" aria-pressed="${ps.mins===m}">${m} minutes</button>`).join("")}</div>
+    <div class="bs-timer"><svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="52" fill="none" stroke="var(--line)" stroke-width="10"/><circle id="bs-ring" cx="60" cy="60" r="52" fill="none" stroke="var(--sage)" stroke-width="10" stroke-linecap="round" stroke-dasharray="326.7" stroke-dashoffset="0" transform="rotate(-90 60 60)"/></svg><b id="bs-time">${ps.mins}:00</b></div>
+    <div class="bs-nav"><button class="bs-btn" data-look>${psTimer.iv?"Looking…":"Start looking"}</button><button class="bs-btn ghost" data-stage="1">I'm ready</button></div></div></div>`;
+  if(stage===1)body=`<div class="bs-study"><div class="bs-curtain" aria-label="The painting is hidden"><div><b>Close your eyes</b><span>Can you still see the painting in your mind? Where were the light parts? What was in each corner?</span></div></div>
+    <div class="bs-plaque"><h3>Picture it in your mind</h3><p>Keep your eyes closed for a little while. Walk through the painting in your mind from left to right.</p>
+    <div class="bs-nav"><button class="bs-btn" data-stage="2">Now I'll tell it</button></div></div></div>`;
+  if(stage===2)body=`<div class="bs-study"><div class="bs-curtain"><div><b>Tell it back</b><span>Say out loud everything you remember. A grown-up can write it down for you.</span></div></div>
+    <div class="bs-plaque"><h3>Tell it back</h3><p>This is called narration. Tell what you saw: the people, the colors, the place and what is happening.</p>
+    <label class="bs-label" for="bs-note">My narration</label><textarea id="bs-note" rows="7" placeholder="I saw…">${esc(note)}</textarea>
+    <div class="bs-nav"><button class="bs-btn" data-stage="3">Show me the painting again</button></div></div></div>`;
+  if(stage===3)body=`<div class="bs-study"><figure class="bs-big">${paintImg(p,"pic",1200)}</figure>
+    <div class="bs-plaque"><h3>Look again</h3><p>What did you remember? What did you miss? Tick each thing you find.</p>
+    <ul class="bs-check">${p.look.map((l,i)=>`<li><label><input type="checkbox" id="bs-ispy-${i}"> ${esc(l)}</label></li>`).join("")}</ul>
+    <div class="bs-nav"><button class="bs-btn" data-stage="4">Talk about it</button></div></div></div>`;
+  if(stage===4)body=`<div class="bs-study"><figure class="bs-big">${paintImg(p,"pic",1200)}</figure>
+    <div class="bs-plaque"><h3>Talk about it</h3><ul class="bs-ispy">${p.talk.map(q=>`<li>${esc(q)}</li>`).join("")}</ul>
+    <h3>The story</h3><p>${esc(p.story)}</p>
+    ${note?`<h3>What you remembered</h3><p class="bs-quote">${esc(note)}</p>`:""}
+    <div class="bs-nav">${st.studied[p.id]?`<span class="bs-done">Studied on ${esc(st.studied[p.id])}</span>`:`<button class="bs-btn hot" data-studied>I studied this painting</button>`}<button class="bs-btn ghost" data-pstab="paint">Now paint it</button></div></div></div>`;
+  return bar+body;
+}
+function paintItView(p){
+  const g=st.ps.grid;
+  return`<div class="bs-pad bs-paintit">
+    <div class="bs-twin">
+      <div class="bs-ref">${paintImg(p,"pic",1000)}${g?`<i class="bs-grid3" aria-hidden="true"></i>`:""}</div>
+      <div class="bs-padsheet"><canvas id="bs-canvas" width="800" height="800" aria-label="Drawing space"></canvas>${g?`<i class="bs-grid3" aria-hidden="true"></i>`:""}</div>
+    </div>
+    <div class="bs-tools">
+      <h3>Paint it yourself</h3>
+      <div class="bs-tip">${bulb}<span>${esc(p.tryit)}</span></div>
+      <button class="bs-btn ghost" data-psgrid aria-pressed="${!!g}">${g?"Hide":"Show"} drawing grid</button>
+      <p class="bs-lesson" style="margin:0;font-size:.82rem">The grid splits both pictures into 9 boxes. Copy one box at a time, the way real artists do.</p>
+      <div class="bs-swatches" role="group" aria-label="Brush color">${p.pal.map(h=>`<button class="bs-sw" data-pen="${h}" aria-label="Color from the painting" aria-pressed="${padState.color===h}" style="background:${h}"></button>`).join("")}<button class="bs-sw" data-pen="#1E1C22" aria-label="Black" aria-pressed="${padState.color==="#1E1C22"}" style="background:#1E1C22"></button><button class="bs-sw" data-pen="eraser" aria-label="Eraser" aria-pressed="${padState.color==="eraser"}" style="background:repeating-conic-gradient(#ddd 0 25%,#fff 0 50%) 0 0/10px 10px"></button></div>
+      <div class="bs-sizes" role="group" aria-label="Brush size">${[6,14,30].map(s=>`<button data-size="${s}" aria-pressed="${padState.size===s}" aria-label="Brush size ${s}"><i style="width:${s/2+3}px;height:${s/2+3}px"></i></button>`).join("")}</div>
+      <div class="bs-nav"><button class="bs-btn ghost" data-undo>Undo</button><button class="bs-btn ghost" data-clear>Clear</button></div>
+    </div></div>
+    <h3 class="bs-sec">Mix the colors of this painting</h3>
+    <p class="bs-lesson">These recipes use only red, yellow, blue, white and black. Mix a little, test it on scrap paper, and adjust.</p>
+    <div class="bs-colors">${p.pal.map(fitCard).join("")}</div>`;
+}
+function zoom(p){
+  const o=document.createElement("div");o.className="bs-zoom";o.setAttribute("role","dialog");o.setAttribute("aria-label",p.t);
+  o.innerHTML=`<button class="bs-zoom-x" aria-label="Close">Close</button>${paintImg(p,"pic",2000)}`;
+  const close=()=>{o.remove();document.removeEventListener("keydown",k)};const k=e=>{if(e.key==="Escape")close()};
+  o.onclick=e=>{if(e.target===o||e.target.closest(".bs-zoom-x"))close()};document.addEventListener("keydown",k);
+  document.body.appendChild(o);o.querySelectorAll("img[data-pid]").forEach(img=>img.addEventListener("error",()=>imgFallback(img)));o.querySelector(".bs-zoom-x").focus();
+}
+function startLook(){
+  if(psTimer.iv)return;psTimer.end=Date.now()+st.ps.mins*60000;const total=st.ps.mins*60000;
+  const b=root.querySelector("[data-look]");if(b)b.textContent="Looking…";
+  psTimer.iv=setInterval(()=>{const left=Math.max(0,psTimer.end-Date.now());const t=root.querySelector("#bs-time"),r=root.querySelector("#bs-ring");
+    if(!t){stopTimer();return}
+    const s=Math.ceil(left/1000);t.textContent=Math.floor(s/60)+":"+String(s%60).padStart(2,"0");r.setAttribute("stroke-dashoffset",(326.7*(1-left/total)).toFixed(1));
+    if(!left){stopTimer();st.ps.stage=1;save();draw()}},250);
+}
+
 /* ───────────── My Gallery ───────────── */
 const BADGES=[
  {id:"first",n:"First bloom",d:"Finish your first guide",ok:d=>d.length>=1,c:"#D2566B"},
@@ -935,6 +1344,8 @@ const BADGES=[
  {id:"tech",n:"Explorer",d:"Try all 5 ways to make art",ok:d=>new Set(d.map(x=>x.tech)).size>=5,c:"#8CA079"},
  {id:"pro",n:"Full bloom",d:"Finish a Full Bloom guide",ok:d=>d.some(x=>x.lvl===3),c:"#47533D"},
  {id:"mix",n:"Color wizard",d:"Match a color in the Color Lab",ok:()=>st.labWins>=1,c:"#8a7fcf"},
+ {id:"look",n:"Art lover",d:"Study 3 paintings",ok:()=>Object.keys(st.studied).length>=3,c:"#7D1F24"},
+ {id:"pinoy",n:"Filipino masters",d:"Study 5 Filipino paintings",ok:()=>Object.keys(st.studied).filter(k=>PAI[k]&&ARTISTS[PAI[k].a].ph).length>=5,c:"#2F5A8A"},
  {id:"zoo",n:"Little zoo",d:"Make 6 different animals",ok:d=>new Set(d.filter(x=>SUB[x.sub]&&SUB[x.sub].cat==="Animals").map(x=>x.sub)).size>=6,c:"#E2673A"}
 ];
 let confirmReset=false;
@@ -947,6 +1358,9 @@ function garden(){
    ${d.length?`<div class="bs-grid">${d.slice().reverse().map(x=>{const t={...st,...x,scene:x.scene||"auto"};if(!SUB[t.sub])return"";const b=build(t);t._b=b;const f=b.F[b.F.length-1];
       return`<div class="bs-cell"><div class="bs-sheet">${render(t,f,true)}</div><p><b>${esc(SUB[t.sub].name)}</b>${esc(TECHS[t.tech].n)} · ${esc(LEVELS[t.lvl].n)}<br><span style="color:var(--soft)">${esc(x.date)}</span></p></div>`}).join("")}</div>`
      :`<div class="bs-empty">Finish any guide in the Studio and press <b>I finished it!</b> Your artwork will hang here.</div>`}
+   <h2 class="bs-sec">Picture study journal</h2>
+   ${Object.keys(st.studied).length||Object.keys(st.notes).length?`<div class="bs-journal">${PAINTINGS.filter(p=>st.studied[p.id]||st.notes[p.id]).map(p=>`<article><b>${esc(p.t)}</b><div style="color:var(--soft);font-size:.8rem">${esc(ARTISTS[p.a].n)}${st.studied[p.id]?" · studied "+esc(st.studied[p.id]):""}</div>${st.notes[p.id]?`<p>${esc(st.notes[p.id])}</p>`:""}</article>`).join("")}</div>`
+     :`<div class="bs-empty">Visit Picture Study, tell back a painting, and your narration will be saved here.</div>`}
    <h2 class="bs-sec">Try this next</h2>
    <div class="bs-tip" style="max-width:640px">${bulb}<span>${esc(next.text)} <button class="bs-btn" style="margin-left:6px;padding:6px 12px;min-height:34px" data-try='${JSON.stringify(next.set)}'>Let's go</button></span></div>
    ${d.length?(confirmReset?`<div class="bs-confirm">Remove all finished artwork and badges from this device? <button class="bs-btn hot" data-reset="yes">Yes, start over</button><button class="bs-btn ghost" data-reset="no">Keep them</button></div>`
@@ -967,7 +1381,7 @@ function wire(b){
   root.onclick=e=>{
     const t=e.target.closest("button");if(!t||!root.contains(t))return;const ds=t.dataset;
     const set=(k,v,reset=true)=>{st[k]=v;if(reset)st.step=0;save();draw()};
-    if(ds.view)return set("view",ds.view,false);
+    if(ds.view){stopTimer();return set("view",ds.view,false)}
     if(ds.cat)return set("cat",ds.cat,false);
     if(ds.sub)return set("sub",ds.sub);
     if(ds.lvl)return set("lvl",+ds.lvl);
@@ -995,9 +1409,20 @@ function wire(b){
     if(ds.labhint!==undefined){const h=$("#bs-hint");h.hidden=!h.hidden;return}
     if(ds.reset){if(ds.reset==="ask")confirmReset=true;else if(ds.reset==="yes"){st.done=[];st.labWins=0;confirmReset=false;save()}else confirmReset=false;draw();return}
     if(ds.try){Object.assign(st,JSON.parse(ds.try));save();draw();return}
+    if(ds.psfilter){st.ps.filter=ds.psfilter;save();draw();return}
+    if(ds.paint){stopTimer();Object.assign(st.ps,{id:ds.paint,tab:"about",stage:0});save();draw();window.scrollTo(0,0);return}
+    if(ds.psback!==undefined){stopTimer();st.ps.id=null;save();draw();return}
+    if(ds.pstab){stopTimer();st.ps.tab=ds.pstab;if(ds.pstab==="study")st.ps.stage=0;padState.undo=[];save();draw();return}
+    if(ds.stage){stopTimer();st.ps.stage=+ds.stage;save();draw();return}
+    if(ds.mins){if(!psTimer.iv){st.ps.mins=+ds.mins;save();draw()}return}
+    if(ds.look!==undefined){startLook();return}
+    if(ds.zoom!==undefined){zoom(PAI[st.ps.id]);return}
+    if(ds.psgrid!==undefined){st.ps.grid=!st.ps.grid;save();draw();return}
+    if(ds.studied!==undefined){st.studied[st.ps.id]=new Date().toLocaleDateString(undefined,{month:"short",day:"numeric",year:"numeric"});save();party();toast("Added to your picture study journal!");draw();return}
   };
   const name=$("#bs-artist");if(name)name.oninput=()=>{st.artist=name.value.slice(0,24);save()};
   const c=$("#bs-canvas");if(c)wirePad(c);
+  const note=$("#bs-note");if(note)note.oninput=()=>{const id=st.ps.id;if(!id)return;if(note.value.trim())st.notes[id]=note.value.slice(0,4000);else delete st.notes[id];save()};
 }
 function scrollStage(){const s=$(".bs-stage");if(s&&s.getBoundingClientRect().top<0)s.scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"})}
 function pushUndo(c){padState.undo.push(c.getContext("2d").getImageData(0,0,c.width,c.height));if(padState.undo.length>20)padState.undo.shift()}
@@ -1024,7 +1449,7 @@ function party(){
 }
 function toast(m){const t=document.createElement("div");t.className="bs-toast";t.setAttribute("role","status");t.textContent=m;document.body.appendChild(t);setTimeout(()=>t.remove(),3200)}
 
-window.BloomStudio={mount(el){root=el;root.classList.add("bs");draw()},mix,build,render,SUBJECTS,EMO,LIB};
+window.BloomStudio={mount(el){root=el;root.classList.add("bs");draw()},mix,build,render,SUBJECTS,EMO,LIB,PAINTINGS,ARTISTS};
 const host=document.getElementById("bloom-studio");if(host)window.BloomStudio.mount(host);
 })();
 </script>
