@@ -212,7 +212,7 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans)}
 .bs-frames{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:18px}
 .bs .bs-frame{border:0;background:none;padding:0;text-align:left;display:flex;flex-direction:column;gap:8px}
 .bs-frame .mat{display:block;background:#F6F2E8;padding:10px;border:6px solid #3A2E22;box-shadow:0 10px 20px -12px rgba(30,20,10,.6);aspect-ratio:4/3.2;overflow:hidden}
-.bs-frame .pic{width:100%;height:100%;object-fit:cover;display:block}
+.bs-frame .pic{width:100%;height:100%;object-fit:contain;display:block}
 .bs-frame:hover .mat{border-color:#5A4632}
 .bs-frame .label{display:flex;flex-direction:column;font-size:.84rem;line-height:1.3}
 .bs-frame .label b{font-family:var(--display);font-weight:600;font-size:.98rem}
@@ -1054,6 +1054,12 @@ const ARTISTS={
   bio:"A French painter who grew up on a farm. He painted farmers and field workers with great respect, showing that ordinary work is beautiful."},
  bruegel:{n:"Pieter Bruegel the Elder",life:"c. 1525–1569",from:"Flanders (today's Belgium)",
   bio:"A Flemish painter famous for busy village scenes full of tiny people working and playing. Every time you look you find something new."},
+ pressland:{n:"Annie L. Pressland",life:"1862–1933",from:"England",
+  bio:"An English watercolor painter who trained at the Slade School of Art in London. She loved painting flowers, gardens and still lifes, and her flower paintings were printed on postcards and fine porcelain."},
+ leonardo:{n:"Leonardo da Vinci",life:"1452–1519",from:"Italy",
+  bio:"An Italian painter, inventor and scientist. He filled notebooks with drawings of birds, machines, plants and people, and he studied how light and shadow make things look real."},
+ fantin:{n:"Henri Fantin-Latour",life:"1836–1904",from:"France",
+  bio:"A French painter best loved for his flower paintings. He painted bouquets slowly and carefully against plain backgrounds, so every petal seems soft enough to touch."},
  constable:{n:"John Constable",life:"1776–1837",from:"England",
   bio:"An English painter who loved the countryside where he grew up. He made many sketches of clouds and skies to paint them just right."}
 };
@@ -1107,6 +1113,12 @@ const PAINTINGS=[
   look:["The water in the field","How the women are bending","Their hats","The faraway trees and sky"],
   talk:["Where does the rice on your plate come from?","How would it feel to work in the field all day?"],
   tryit:"Paint water as a lighter strip with a few horizontal lines. Reflections are always straight below the object."},
+ {id:"boyhat",a:"delarosa",t:"Portrait of a Boy with a Hat",y:"1910",m:"Oil on canvas",where:"Philippines",file:"Fabián de la Rosa - Portrait of a boy with hut (1910).jpg",
+  pal:["#e6dcc8","#c9a48a","#3a4a44","#6a5a4a","#f2ece2"],
+  story:"A boy in a soft white hat looks straight at us with serious dark eyes. Fabián de la Rosa signed it in Manila in 1910. Portraits like this show us the children who lived more than a hundred years ago.",
+  look:["His big dark eyes","The fluffy white hat","His rosy ear","The white collar"],
+  talk:["How do you think he felt sitting still for a painting?","What would you wear in your portrait?"],
+  tryit:"In a face, the eyes sit halfway down. Draw a light line there first, then place the eyes on it."},
  {id:"pasay",a:"delarosa",t:"Pasay Beach, Manila",y:"Early 1900s",m:"Oil",where:"Philippines",file:"Fabian de la Rosa, Pasay Beach, Manila.jpg",
   pal:["#9bb9c9","#e9e2cf","#d6c49c","#6a8aa0","#4b5a3a"],
   story:"Long ago, Pasay had a sandy beach on Manila Bay where families went to cool off. Fabián de la Rosa painted it so we can still visit it today, more than a hundred years later.",
@@ -1191,6 +1203,30 @@ const PAINTINGS=[
   look:["The hunters and dogs","Skaters on the ice","Birds in the bare trees","A fire by the inn"],
   talk:["How many people can you count?","What would you play if you were there?"],
   tryit:"Paint snow with white, light gray and a little blue. Bare trees are dark lines that split like a Y."},
+ {id:"flowerbasket",a:"pressland",t:"Flowers in a Basket",y:"Early 1900s",m:"Watercolor",where:"Private collection",file:"",
+  pal:["#e8506a","#f4a0b0","#f6eee8","#3f7a3a","#8a6a3a"],
+  story:"A woven basket overflows with pink, white and purple flower clusters and long green leaves. One small bunch has fallen onto the table. Pressland painted flowers with loose, wet watercolor, letting the colors run softly into each other.",
+  look:["The fallen bunch of flowers","White flowers between the pink ones","The curved basket handle","Purple and blue hiding in the petals"],
+  talk:["Which flower would you pick first?","How did she make the flowers look soft?"],
+  tryit:"Paint flower clusters as blobs of pink first. When it is almost dry, add darker pink dots and a few white spaces for petals."},
+ {id:"monalisa",a:"leonardo",t:"Mona Lisa",y:"c. 1503–1519",m:"Oil on poplar wood",where:"Louvre, Paris",file:"Mona Lisa, by Leonardo da Vinci, from C2RMF retouched.jpg",
+  pal:["#3a3a24","#8a7a4a","#d9b878","#6a8a7a","#2a2418"],
+  story:"This may be the most famous painting in the world. It shows Lisa Gherardini, the wife of a merchant in Florence. Leonardo worked on it for many years and blended the shadows so softly that you can't see a single line. People still wonder about her small smile.",
+  look:["Her hands resting on each other","The winding road and bridge behind her","The soft smile at the corners of her mouth","The thin veil over her hair"],
+  talk:["Is she happy? How can you tell?","Why do you think so many people want to see this painting?"],
+  tryit:"Blend shadows on a face by rubbing gently with your finger or a tissue, so there are no hard lines."},
+ {id:"ermine",a:"leonardo",t:"Lady with an Ermine",y:"c. 1489–1491",m:"Oil on walnut wood",where:"Czartoryski Museum, Kraków",file:"Lady with an Ermine - Leonardo da Vinci - Google Art Project.jpg",
+  pal:["#14141a","#e8dcc8","#4a7aa8","#8a2a24","#c9a882"],
+  story:"A young woman named Cecilia Gallerani holds an ermine, a small white weasel, in her arms. Both of them turn the same way, as if they heard something at the same moment. Leonardo painted her hand so carefully you can see every knuckle.",
+  look:["The ermine's tiny paw","Her long fingers","The black bead necklace","The blue sleeve on one side"],
+  talk:["What do you think she and the ermine are looking at?","How is the ermine like a pet you know?"],
+  tryit:"Draw a person and an animal turning the same way. Their noses should point in the same direction."},
+ {id:"summerflowers",a:"fantin",t:"Summer Flowers",y:"1880",m:"Oil on canvas",where:"The Metropolitan Museum of Art, New York",file:"",
+  pal:["#a39a74","#f2efe6","#e8d9a8","#c8302a","#5a6a3a"],
+  story:"A big bouquet of roses, phlox and lilies sits on a wooden table, with two roses fallen beside the vase. Fantin-Latour signed and dated it in the top corner. He painted the background a quiet gray-brown so the flowers shine.",
+  look:["The two fallen roses","His signature and the date","The white phlox flowers","The bright red flowers"],
+  talk:["Which flower would you smell first?","Why do you think the background is so plain?"],
+  tryit:"Paint the plain background first. Then paint each flower as a soft blob, and add the darker centers and petal edges last."},
  {id:"haywain",a:"constable",t:"The Hay Wain",y:"1821",m:"Oil on canvas",where:"National Gallery, London",file:"John Constable - The Hay Wain (1821).jpg",
   pal:["#8aa0b8","#e8e4d8","#4a5a2a","#8a7a4a","#2e3a24"],
   story:"A wooden cart called a hay wain crosses a shallow river while a dog watches. Constable painted the countryside where he grew up in England. He made many studies of clouds so his skies would look real.",
@@ -1200,15 +1236,15 @@ const PAINTINGS=[
 ];
 /*PAINTINGS-END*/
 const PAI=Object.fromEntries(PAINTINGS.map(p=>[p.id,p]));
-const wm=(file,w)=>`https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(file)}?width=${w}`;
-const wmPage=file=>`https://commons.wikimedia.org/wiki/File:${encodeURIComponent(file.replace(/ /g,"_"))}`;
+const wm=(file,w)=>!file?"":`https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(file)}?width=${w}`;
+const wmPage=file=>!file?"#":`https://commons.wikimedia.org/wiki/File:${encodeURIComponent(file.replace(/ /g,"_"))}`;
 const paintImg=(p,cls,w=900)=>`<img class="${cls}" data-pid="${p.id}" alt="${esc(p.t)} by ${esc(ARTISTS[p.a].n)}" loading="lazy" src="paintings/${p.id}.jpg" data-alt-src="${wm(p.file,w)}">`;
 function imgFallback(img){
-  if(img.dataset.altSrc&&!img.dataset.tried){img.dataset.tried="1";img.src=img.dataset.altSrc;return}
+  if(img.dataset.altSrc&&img.dataset.altSrc!=="undefined"&&img.dataset.altSrc!==""&&!img.dataset.tried){img.dataset.tried="1";img.src=img.dataset.altSrc;return}
   const p=PAI[img.dataset.pid];if(!p)return;
   const d=document.createElement("div");d.className="bs-noimg "+img.className;
   d.style.background=`linear-gradient(135deg,${p.pal.join(",")})`;
-  d.innerHTML=`<span><b>${esc(p.t)}</b><a href="${wmPage(p.file)}" target="_blank" rel="noopener">Open the painting</a></span>`;
+  d.innerHTML=`<span><b>${esc(p.t)}</b>${p.file?`<a href="${wmPage(p.file)}" target="_blank" rel="noopener">Open the painting</a>`:"Picture coming soon"}</span>`;
   img.replaceWith(d);
 }
 function wireImgs(){root.querySelectorAll("img[data-pid]").forEach(img=>{
@@ -1253,7 +1289,7 @@ function galleryView(){
      <div class="bs-frames">${list.filter(p=>p.a===a).map(p=>`<button class="bs-frame" data-paint="${p.id}">
        <span class="mat">${paintImg(p,"pic",500)}</span>
        <span class="label"><b>${esc(p.t)}</b><span>${esc(p.y)}${st.studied[p.id]?` · <em>Studied</em>`:""}${p.older?` · <em class="old">Ages 9+</em>`:""}</span></span></button>`).join("")}</div></div>`}).join("")}
-   <p class="bs-credit">All paintings are in the public domain. Images from Wikimedia Commons.</p>
+   <p class="bs-credit">All paintings are in the public domain because their artists died long ago. Images from Wikimedia Commons.</p>
   </section>`;
 }
 function paintingView(p){
@@ -1269,7 +1305,7 @@ function paintingView(p){
 function aboutView(p){
   const A=ARTISTS[p.a];
   return`<div class="bs-about">
-    <figure class="bs-big">${paintImg(p,"pic",1200)}<figcaption><button class="bs-btn ghost" data-zoom>See it big</button><a href="${wmPage(p.file)}" target="_blank" rel="noopener">Image source</a></figcaption></figure>
+    <figure class="bs-big">${paintImg(p,"pic",1200)}<figcaption><button class="bs-btn ghost" data-zoom>See it big</button>${p.file?`<a href="${wmPage(p.file)}" target="_blank" rel="noopener">Image source</a>`:""}</figcaption></figure>
     <div class="bs-plaque">
       ${p.older?`<p class="bs-warn">This painting shows a sad scene. It is best for children 9 and up with a grown-up nearby.</p>`:""}
       <h3>The story</h3><p>${esc(p.story)}</p>
