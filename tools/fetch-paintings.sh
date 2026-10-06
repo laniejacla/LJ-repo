@@ -10,7 +10,7 @@ node -e '
 const s=require("fs").readFileSync("bloom-studio.html","utf8");
 const m=s.match(/\/\*PAINTINGS-START\*\/([\s\S]*?)\/\*PAINTINGS-END\*\//);
 const PAINTINGS=new Function(m[1]+";return PAINTINGS")();
-for(const p of PAINTINGS)console.log(p.id+"\t"+encodeURIComponent(p.file));
+for(const p of PAINTINGS)if(!p.ext&&p.file)console.log(p.id+"\t"+encodeURIComponent(p.file));
 ' | while IFS="$(printf '\t')" read -r id file; do
   out="paintings/$id.jpg"
   [ -s "$out" ] && { echo "have $out"; continue; }

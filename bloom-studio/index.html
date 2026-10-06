@@ -1125,6 +1125,36 @@ const PAINTINGS=[
   look:["The perfect cone of Mayon","Farmers in salakot hats","Carabaos on the left","Tall coconut palms"],
   talk:["Have you seen Mayon or another mountain like it?","Why is the rice golden instead of green?"],
   tryit:"For golden rice, paint yellow first, then add short strokes of orange and light green on top."},
+ {id:"mangoes",a:"amorsolo",t:"Mango Harvest",y:"Mid-1900s",m:"Oil on canvas",where:"Private collection",file:"",ext:"webp",intl:true,
+  pal:["#7a9a2a","#e8a838","#c84a2a","#2a4a7a","#a8c860"],
+  story:"Under a huge mango tree, women gather green and yellow mangoes into baskets while a boy rides a carabao in the shade. Sunlight breaks through the leaves and makes bright spots on the ground. Amorsolo was a master of this dappled light.",
+  look:["The boy on the carabao","The clay jar","A girl smiling with a basket of mangoes","Patches of sunlight on the ground"],
+  talk:["What fruit do you like to pick?","How did Amorsolo show sunlight coming through the leaves?"],
+  tryit:"Paint the ground in shadow colors first. Then dab bright yellow-orange spots on top for sunlight through the leaves."},
+ {id:"rooster",a:"amorsolo",t:"Man with His Rooster",y:"Mid-1900s",m:"Oil on canvas",where:"Private collection",file:"",ext:"webp",intl:true,
+  pal:["#c8a050","#8a2a1a","#e8e0d0","#3a3020","#b8502a"],
+  story:"An old farmer squats in his yard and gently strokes his proud rooster. A bowl of water and a coconut shell of feed sit on the ground. Amorsolo loved painting the everyday life of Filipino barrio folk.",
+  look:["The rooster's red comb","The water bowl and feed","The man's head cloth","The bamboo ladder behind him"],
+  talk:["How do you think the man feels about his rooster?","What animals live near your home?"],
+  tryit:"Paint a rooster's tail with long curved strokes of dark green and black, then add shiny blue streaks."},
+ {id:"fisherfamily",a:"amorsolo",t:"Fisherman's Family at Sunset",y:"1930s",m:"Oil on canvas",where:"Private collection",file:"",intl:true,
+  pal:["#e88a40","#5a7a6a","#3a3020","#e8c890","#8a8aa0"],
+  story:"At sunset, fishermen push their banca onto the beach while a father in a salakot holds his little child and a mother greets them. The orange sky shines on the wet sand and the water. Amorsolo was famous for painting light at the start and end of the day.",
+  look:["The baby in the father's arms","The banca and its outrigger","Orange light on the water","A mountain far away"],
+  talk:["Why do you think the family came to the beach?","What time of day is it? How can you tell?"],
+  tryit:"Paint a sunset sky in orange and yellow, then paint the people as dark shapes in front of it with bright edges."},
+ {id:"fruitgirl",a:"amorsolo",t:"Girl with a Basket of Fruit",y:"1950",m:"Oil on canvas",where:"Private collection",file:"",ext:"webp",intl:true,
+  pal:["#c83a2a","#a8c84a","#e8a840","#5a3a2a","#f0d8c8"],
+  story:"A smiling young woman in a red patterned dress and head scarf sits in the shade holding a bilao of fruit. Fallen leaves glow orange around her. Amorsolo signed and dated it in the corner: Manila, 1950.",
+  look:["The bilao full of fruit","Her patterned head scarf","Orange leaves on the ground","The signature and year"],
+  talk:["What fruits do you think are in her bilao?","How does this painting make you feel?"],
+  tryit:"Use warm reds and oranges for the person and cool greens behind her, so she pops out of the picture."},
+ {id:"fruits",a:"amorsolo",t:"Philippine Fruits",y:"Mid-1900s",m:"Oil on canvas",where:"Private collection",file:"",intl:true,
+  pal:["#d8b840","#7a9a4a","#c84a2a","#e8dcb8","#4a6a3a"],
+  story:"A still life of Filipino fruits: bumpy green atis, yellow papayas and clusters of small round fruits in a bilao, set on a red and green patterned cloth. A still life is a painting of objects that do not move, so the painter can look at them for a long time.",
+  look:["The bumpy atis","A papaya lying on the cloth","Clusters of small round fruits","The red pattern on the cloth"],
+  talk:["Which of these fruits have you eaten?","Why do painters like to paint fruit?"],
+  tryit:"Set up your own fruit still life at home. Draw the big shapes first, then add the bumps and spots last."},
  {id:"ricefield",a:"delarosa",t:"Women Working in a Rice Field",y:"1927",m:"Oil on panel",where:"Philippines",file:"Fabian de la Rosa, Women working in a rice field.jpg",
   pal:["#c9b58a","#e6dcc4","#5a7a3a","#8a8a8a","#b04a3a"],
   story:"A row of women bend over a flooded paddy, pushing young rice plants into the mud one by one. Their colorful skirts and white head cloths are reflected in the shiny water. Rice is the most important food in the Philippines, and Fabián de la Rosa painted this shared work with great respect.",
@@ -1358,7 +1388,7 @@ const PAINTINGS=[
 const PAI=Object.fromEntries(PAINTINGS.map(p=>[p.id,p]));
 const wm=(file,w)=>!file?"":`https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(file)}?width=${w}`;
 const wmPage=file=>!file?"#":`https://commons.wikimedia.org/wiki/File:${encodeURIComponent(file.replace(/ /g,"_"))}`;
-const paintImg=(p,cls,w=900)=>`<img class="${cls}" data-pid="${p.id}" alt="${esc(p.t)} by ${esc(ARTISTS[p.a].n)}" loading="lazy" src="paintings/${p.id}.jpg" data-alt-src="${wm(p.file,w)}">`;
+const paintImg=(p,cls,w=900)=>`<img class="${cls}" data-pid="${p.id}" alt="${esc(p.t)} by ${esc(ARTISTS[p.a].n)}" loading="lazy" src="paintings/${p.id}.${p.ext||"jpg"}" data-alt-src="${wm(p.file,w)}">`;
 function imgFallback(img){
   if(img.dataset.altSrc&&img.dataset.altSrc!=="undefined"&&img.dataset.altSrc!==""&&!img.dataset.tried){img.dataset.tried="1";img.src=img.dataset.altSrc;return}
   const p=PAI[img.dataset.pid];if(!p)return;
