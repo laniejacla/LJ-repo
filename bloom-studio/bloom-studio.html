@@ -348,7 +348,8 @@ const LIB={
  charcoal:["Charcoal","K3 W1","Almost black, but softer."],
  terracotta:["Terracotta","R2 Y1 B.4 W1","Clay-pot orange: orange with a touch of blue."],
  snow:["Snow white","W8 K.1 B.1","White with a whisper of blue so it shows on paper."],
- paleYellow:["Butter","Y1 W3","Yellow with white."]
+ paleYellow:["Butter","Y1 W3","Yellow with white."],
+ skin:["Kayumanggi skin","R1 Y1 B.3 W3","Orange with a dot of blue and lots of white for warm brown skin."]
 };
 const col=k=>mix(LIB[k][1]);
 const recText=rec=>Object.entries(parse(rec)).filter(([,n])=>n>0).map(([c,n])=>(n<1?"a dot of":n)+" "+PAINTS[c].n).join(" + ");
@@ -373,7 +374,7 @@ const drop=(x,y,c)=>P(`M${x} ${y} C${x-6} ${y+9} ${x-5} ${y+15} ${x} ${y+15} C${
    parts: s = drawing step, z = paint order (ears drawn after the head can still sit
    behind it). face: where the feeling goes. head: where a hat or bow sits. */
 const SUBJECTS=[
-{id:"puppy",name:"Puppy",cat:"Animals",scene:"day",
+{id:"puppy",name:"Puppy",cat:"Land Animals",scene:"day",
  steps:["Draw a big round head","Add two floppy ears","Draw an oval snout and a round nose","Draw the body like a bell","Add the legs and paws","Add a wiggly tail"],
  faceStep:3,face:{x:100,y:76,dx:15,my:101,s:.9},head:{x:100,y:47,w:56},base:{x:100,y:176,w:84},
  colors:{fur:"tan",ear:"brown",light:"cream",dark:"charcoal"},main:"fur",
@@ -383,7 +384,7 @@ const SUBJECTS=[
   {s:4,z:3,el:P("M78 106 C70 128 68 150 72 172 L128 172 C132 150 130 128 122 106 Z","fur")},{s:4,z:3.5,el:E(100,148,15,20,"light")},
   {s:5,z:2,el:pair(E(72,160,13,15,"fur"))},{s:5,z:4,el:L("M91 128 L91 168 M109 128 L109 168")},{s:5,z:4.2,el:pair(E(86,172,11,6,"fur"))},
   {s:6,z:1,el:P("M126 158 C146 160 156 146 152 128 C146 134 142 146 126 150 Z","fur")}]},
-{id:"kitten",name:"Kitten",cat:"Animals",scene:"sunset",
+{id:"kitten",name:"Kitten",cat:"Land Animals",scene:"sunset",
  steps:["Draw a wide oval head","Add two pointy ears","Add a little nose and whiskers","Draw the body","Add the legs and paws","Add a curly tail and stripes"],
  faceStep:3,face:{x:100,y:80,dx:16,my:99,s:.9},head:{x:100,y:46,w:60},base:{x:100,y:176,w:80},
  colors:{fur:"ginger",light:"cream",pink:"pink",dark:"darkBrown"},main:"fur",
@@ -394,7 +395,7 @@ const SUBJECTS=[
   {s:5,z:4,el:L("M93 134 L93 168 M107 134 L107 168")},{s:5,z:4.1,el:pair(E(87,172,10,6,"fur"))},
   {s:6,z:1,el:P("M124 164 C150 168 166 150 160 128 C158 118 150 116 148 124 C152 140 146 154 124 154 Z","fur")},
   {s:6,z:6,el:L("M92 52 L94 60 M100 50 L100 60 M108 52 L106 60")}]},
-{id:"bunny",name:"Bunny",cat:"Animals",scene:"dreamy",
+{id:"bunny",name:"Bunny",cat:"Land Animals",scene:"dreamy",
  steps:["Draw a round head","Add two tall ears","Add a tiny nose","Draw a round body","Add the feet and paws","Add a fluffy tail"],
  faceStep:3,face:{x:100,y:88,dx:14,my:106,s:.85},head:{x:100,y:62,w:50},base:{x:100,y:178,w:76},
  colors:{fur:"snow",pink:"pink",light:"lightPink"},main:"fur",
@@ -404,7 +405,7 @@ const SUBJECTS=[
   {s:4,z:3,el:E(100,146,32,28,"fur")},{s:4,z:3.2,el:E(100,152,17,17,"light")},
   {s:5,z:4,el:pair(E(80,172,15,7,"fur"))},{s:5,z:4,el:pair(E(84,134,7,10,"fur"))},
   {s:6,z:2,el:O(132,160,10,"fur")}]},
-{id:"bear",name:"Teddy Bear",cat:"Animals",scene:"day",
+{id:"bear",name:"Teddy Bear",cat:"Land Animals",scene:"day",
  steps:["Draw a round head","Add two round ears","Draw the snout and nose","Draw a round body and tummy","Add arms and feet"],
  faceStep:3,face:{x:100,y:78,dx:15,my:100,s:.9},head:{x:100,y:48,w:56},base:{x:100,y:180,w:84},
  colors:{fur:"brown",light:"peach",dark:"charcoal"},main:"fur",
@@ -413,7 +414,7 @@ const SUBJECTS=[
   {s:3,z:6,el:E(100,95,15,11,"light")},{s:3,z:7,el:E(100,90,6,4.5,"dark")},
   {s:4,z:3,el:E(100,146,36,30,"fur")},{s:4,z:3.2,el:E(100,150,20,20,"light")},
   {s:5,z:4,el:pair(E(70,136,10,16,"fur"))},{s:5,z:4,el:pair(E(80,172,14,9,"fur"))},{s:5,z:4.1,el:pair(E(80,172,7,5,"light"))}]},
-{id:"frog",name:"Frog",cat:"Animals",scene:"day",
+{id:"frog",name:"Frog",cat:"Water Animals",scene:"day",
  steps:["Draw a wide oval body","Add two eye bumps on top","Add a round belly","Add the legs and feet","Add some spots"],
  faceStep:2,face:{x:100,y:78,dx:26,my:114,s:1},head:{x:100,y:62,w:50},base:{x:100,y:164,w:110},
  colors:{fur:"leaf",light:"lightGreen",spot:"darkGreen"},main:"fur",
@@ -422,7 +423,7 @@ const SUBJECTS=[
   {s:3,z:6,el:E(100,134,28,15,"light")},
   {s:4,z:3,el:pair(E(56,150,20,13,"fur"))},{s:4,z:6.5,el:pair(E(84,150,10,6,"fur"))},
   {s:5,z:5.5,el:O(64,110,5,"spot")+O(138,104,4,"spot")+O(128,92,3,"spot")+O(72,96,3,"spot")}]},
-{id:"chick",name:"Chick",cat:"Animals",scene:"day",
+{id:"chick",name:"Chick",cat:"Birds & Flying",scene:"day",
  steps:["Draw a big circle","Add a little feather tuft","Add a triangle beak","Add two wings","Add the feet"],
  faceStep:3,face:{x:100,y:96,dx:18,my:0,s:1,mouth:false},head:{x:100,y:58,w:50},base:{x:100,y:170,w:80},
  colors:{fur:"golden",beak:"orange",wing:"paleYellow"},main:"fur",
@@ -431,7 +432,7 @@ const SUBJECTS=[
   {s:3,z:7,el:P("M92 106 L108 106 L100 116 Z","beak")},
   {s:4,z:6,el:pair(P("M56 102 C42 108 42 132 58 130 C64 128 64 112 56 102 Z","wing"))},
   {s:5,z:3,el:pair(P("M86 152 L82 168 M86 152 L88 168 M86 152 L94 166","none").replace('data-c="none"','data-c="none" data-k="beak"'))}]},
-{id:"fish",name:"Fish",cat:"Ocean & Bugs",scene:"ocean",
+{id:"fish",name:"Fish",cat:"Water Animals",scene:"ocean",
  steps:["Draw a lemon-shaped body","Add a tail","Add the top and bottom fins","Add a stripe and a side fin","Blow some bubbles"],
  faceStep:3,face:{x:74,y:92,dx:11,my:106,s:.8},head:{x:80,y:66,w:40},base:{x:105,y:150,w:110},
  colors:{fur:"orange",fin:"coral",light:"cream",bubble:"lightSky"},main:"fur",
@@ -440,7 +441,7 @@ const SUBJECTS=[
   {s:3,z:4,el:P("M80 68 C90 46 116 48 124 72 Z","fin")},{s:3,z:4,el:P("M88 132 C94 150 110 150 116 130 Z","fin")},
   {s:4,z:6,el:P("M106 70 C98 88 98 112 106 130 L116 127 C108 112 108 88 116 73 Z","light")},{s:4,z:7,el:P("M100 104 C108 98 120 102 118 112 C112 114 104 112 100 104 Z","fin")},
   {s:5,z:8,el:O(30,62,6,"bubble")+O(22,44,4,"bubble")+O(34,30,3,"bubble")}]},
-{id:"turtle",name:"Turtle",cat:"Ocean & Bugs",scene:"ocean",
+{id:"turtle",name:"Turtle",cat:"Water Animals",scene:"ocean",
  steps:["Draw a dome for the shell","Add a round head","Add the bottom of the shell","Add the legs and tail","Add the shell pattern"],
  faceStep:2,face:{x:168,y:108,dx:8,my:120,s:.65},head:{x:168,y:90,w:30},base:{x:100,y:160,w:130},
  colors:{shell:"leaf",skin:"lightGreen",rim:"darkGreen",pattern:"lime"},main:"shell",
@@ -449,7 +450,7 @@ const SUBJECTS=[
   {s:3,z:6,el:P("M38 134 L162 134 C164 146 36 146 38 134 Z","rim")},
   {s:4,z:3,el:E(64,150,12,10,"skin")+E(136,150,12,10,"skin")},{s:4,z:3,el:P("M46 130 L26 140 L46 140 Z","skin")},
   {s:5,z:6,el:P("M100 92 L118 106 L112 126 L88 126 L82 106 Z","pattern")},{s:5,z:6,el:L("M100 92 L100 80 M118 106 L142 102 M112 126 L122 134 M88 126 L78 134 M82 106 L58 102")}]},
-{id:"ladybug",name:"Ladybug",cat:"Ocean & Bugs",scene:"day",
+{id:"ladybug",name:"Ladybug",cat:"Insects & Bugs",scene:"day",
  steps:["Draw a big circle","Add a half-moon head","Draw a line down the middle","Add the spots","Add antennae and legs"],
  faceStep:2,face:{x:100,y:68,dx:12,my:78,s:.7,light:true},head:{x:100,y:50,w:46},base:{x:100,y:168,w:96},
  colors:{fur:"red",head:"charcoal",dark:"charcoal"},main:"fur",
@@ -458,7 +459,7 @@ const SUBJECTS=[
   {s:3,z:6,el:L("M100 86 L100 164")},
   {s:4,z:6,el:O(76,108,8,"dark")+O(124,108,8,"dark")+O(80,138,7,"dark")+O(120,138,7,"dark")},
   {s:5,z:4,el:pair(P("M86 52 C80 40 76 34 70 30","none"))+pair(O(70,30,4,"dark"))},{s:5,z:4,el:pair(L("M54 108 L40 102 M52 126 L38 128 M58 146 L46 154"))}]},
-{id:"butterfly",name:"Butterfly",cat:"Ocean & Bugs",scene:"dreamy",
+{id:"butterfly",name:"Butterfly",cat:"Insects & Bugs",scene:"dreamy",
  steps:["Draw a long body and a round head","Add the top wings","Add the bottom wings","Decorate the wings with dots","Add two curly antennae"],
  faceStep:1,face:{x:100,y:61,dx:6,my:68,s:.55,light:true},head:{x:100,y:48,w:24},base:{x:100,y:160,w:90},
  colors:{body:"violet",wingA:"lavender",wingB:"peach",dot:"sky"},main:"wingA",
@@ -499,20 +500,362 @@ const SUBJECTS=[
   {s:2,z:4,el:O(64,90,26,"leaf")+O(136,90,26,"leaf")+O(78,58,24,"leaf")+O(124,58,24,"leaf")},{s:2,z:4.1,el:O(100,78,40,"leaf")},
   {s:3,z:5,el:O(68,92,6,"fruit")+O(126,68,6,"fruit")+O(112,98,6,"fruit")+O(84,62,6,"fruit")+O(140,96,6,"fruit")},
   {s:4,z:6,el:pair(P("M60 188 L66 172 L72 188 L78 174 L84 188 Z","grass"))}]},
-{id:"sun",name:"Sunshine",cat:"Sky",scene:"day",
+{id:"sun",name:"Sunshine",cat:"Sky & Weather",scene:"day",
  steps:["Draw a big circle","Add pointy rays all around"],
  faceStep:2,face:{x:100,y:94,dx:14,my:112,s:1},head:{x:100,y:62,w:56},base:{x:100,y:190,w:0},
  colors:{sun:"golden",ray:"orange"},main:"sun",
  parts:[{s:1,z:5,el:O(100,100,38,"sun")},{s:2,z:4,el:rays(100,100,12,36,62,"ray")}]},
-{id:"cloud",name:"Rain Cloud",cat:"Sky",scene:"dreamy",
+{id:"cloud",name:"Rain Cloud",cat:"Sky & Weather",scene:"dreamy",
  steps:["Draw a puffy cloud with bumps","Add raindrops underneath"],
  faceStep:1,face:{x:100,y:106,dx:16,my:120,s:1},head:{x:100,y:68,w:50},base:{x:100,y:190,w:0},
  colors:{cloud:"lightSky",rain:"sky"},main:"cloud",
  parts:[{s:1,z:5,el:P("M52 132 C30 132 28 104 52 102 C48 72 90 64 100 84 C108 60 150 64 148 96 C172 96 174 132 150 132 Z","cloud")},
   {s:2,z:4,el:drop(70,144,"rain")+drop(100,152,"rain")+drop(130,144,"rain")+drop(86,168,"rain")+drop(116,170,"rain")}]}
 ];
+/* ───────────── more subjects ─────────────
+   Most animals and people are built by a few generators so a new subject is a
+   short list of options. Head features are written for a head at (100,80) with
+   radius 40, then scaled into place. */
+const f1=v=>+(+v).toFixed(1);
+function headT(el,s,hy){
+  return el.replace(/d="([^"]+)"/g,(m,d)=>{let i=0;return'd="'+d.replace(/-?\d+(\.\d+)?/g,n=>{const v=+n;return String(f1((i++%2===0)?100+(v-100)*s:hy+(v-80)*s))})+'"'})
+    .replace(/cx="([\d.-]+)" cy="([\d.-]+)" rx="([\d.-]+)" ry="([\d.-]+)"/g,(m,cx,cy,rx,ry)=>`cx="${f1(100+(cx-100)*s)}" cy="${f1(hy+(cy-80)*s)}" rx="${f1(rx*s)}" ry="${f1(ry*s)}"`);
+}
+const LN=(d,k)=>`<path d="${d}" data-c="none" data-k="${k}"/>`;
+const EARS={
+ floppy:()=>pair(P("M70 58 C52 50 40 68 44 92 C47 108 62 110 68 96 Z","ear")),
+ pointy:()=>pair(P("M66 64 L68 30 L92 46 Z","fur"))+pair(P("M71 57 L72 40 L86 49 Z","pink")),
+ round:()=>pair(O(68,48,15,"fur"))+pair(O(68,48,8,"light")),
+ mouse:()=>pair(O(64,46,22,"fur"))+pair(O(64,46,14,"pink")),
+ side:()=>pair(P("M66 66 Q44 54 32 66 Q46 80 66 76 Z","fur"))+pair(P("M62 68 Q48 62 41 67 Q50 74 62 73 Z","pink")),
+ tall:()=>pair(P("M76 50 Q64 22 76 12 Q90 24 90 46 Z","fur"))+pair(P("M79 46 Q71 26 77 20 Q85 30 86 44 Z","pink")),
+ big:()=>pair(E(50,84,26,36,"fur"))+pair(E(53,86,16,25,"pink")),
+ monkey:()=>pair(O(58,84,13,"fur"))+pair(O(58,84,7,"light")),
+ none:()=>""
+};
+const HORNS={
+ cow:()=>pair(P("M80 46 Q68 30 72 22 Q84 30 92 44 Z","horn")),
+ carabao:()=>pair(P("M82 52 Q44 48 26 28 Q30 50 48 58 Q66 64 86 60 Z","horn")),
+ goat:()=>pair(P("M84 44 Q78 18 60 14 Q72 28 78 46 Z","horn")),
+ antlers:()=>pair(LN("M84 44 L74 22 L64 10 M74 22 L82 8 M77 30 L62 28","horn")),
+ ossicone:()=>pair(P("M82 46 L80 24 L87 24 L89 46 Z","fur"))+pair(O(83,22,6,"dark"))
+};
+const SNOUTS={
+ dog:{el:()=>E(100,95,17,12,"light")+E(100,89,6.5,4.8,"dark"),face:{y:76,dx:15,my:101,s:.9}},
+ cat:{el:()=>P("M95 89 L105 89 L100 95 Z","pink")+L("M58 89 L78 92 M58 98 L78 96 M142 89 L122 92 M142 98 L122 96"),face:{y:80,dx:16,my:99,s:.9}},
+ bigcat:{el:()=>E(100,96,17,12,"light")+P("M94 88 L106 88 L100 95 Z","dark")+L("M56 94 L80 96 M56 102 L80 100 M144 94 L120 96 M144 102 L120 100"),face:{y:76,dx:15,my:103,s:.9}},
+ pig:{el:()=>E(100,94,14,10,"pink")+E(95,94,2.5,3.5,"dark")+E(105,94,2.5,3.5,"dark"),face:{y:74,dx:16,my:108,s:.85}},
+ muzzle:{el:()=>E(100,100,24,15,"muzzle")+O(92,99,3,"dark")+O(108,99,3,"dark"),face:{y:72,dx:17,my:110,s:.9}},
+ monkey:{el:()=>E(100,90,28,24,"light")+O(97,93,1.8,"dark")+O(103,93,1.8,"dark"),face:{y:84,dx:12,my:103,s:.8}},
+ trunk:{el:()=>P("M92 88 C90 110 92 130 84 142 C80 148 88 152 92 146 C100 134 108 112 108 88 Z","fur"),face:{y:74,dx:16,my:0,s:.9,mouth:false}},
+ mouse:{el:()=>O(100,94,5,"pink")+L("M60 92 L82 95 M60 100 L82 98 M140 92 L118 95 M140 100 L118 98"),face:{y:80,dx:13,my:102,s:.8}},
+ fox:{el:()=>P("M78 84 Q100 120 122 84 Q100 96 78 84 Z","light")+E(100,102,5,4,"dark"),face:{y:76,dx:14,my:0,s:.85,mouth:false}}
+};
+const MARKS={
+ stripes:(bx)=>({head:pair(P("M60 76 L78 73 L60 69 Z","dark"))+pair(P("M62 92 L77 88 L63 85 Z","dark"))+P("M93 42 L100 58 L107 42 Z","dark"),
+   body:[118,136,154].map(y=>pair(P(`M${f1(bx)} ${y} L${f1(bx+15)} ${y+3} L${f1(bx)} ${y+7} Z`,"dark"))).join("")}),
+ spots:()=>({head:O(84,50,4,"dark")+O(118,54,3,"dark"),body:[[84,124,6],[112,132,7],[96,150,5],[120,156,5],[80,158,4]].map(([x,y,r])=>O(x,y,r,"dark")).join("")}),
+ patches:()=>({head:P("M108 46 C124 42 132 56 124 66 C116 62 110 56 108 46 Z","dark"),body:P("M74 120 C86 112 98 124 90 136 C80 140 70 132 74 120 Z","dark")+P("M110 140 C124 134 132 148 122 158 C112 158 106 150 110 140 Z","dark")}),
+ panda:()=>({head:pair(E(84,78,9,11,"dark")),body:""})
+};
+function beast(id,name,o){
+  const hr=o.hr||34,hy=o.hy||74,s=hr/40,w=o.bw||1,X=100;
+  const parts=[],add=(st,z,el)=>parts.push({s:st,z,el});
+  const H=el=>headT(el,s,hy);
+  const sn=SNOUTS[o.snout||"dog"];
+  // 1 head
+  add(1,5,H(E(100,80,40*(o.hw||1),36,"fur")));
+  // 2 ears, horns, mane
+  add(2,4,H(EARS[o.ears||"floppy"]()));
+  if(o.horns)add(2,4.5,H(HORNS[o.horns]()));
+  if(o.mane==="lion")add(2,3.8,petals(X,hy,15,hr*.8,hr*1.55,15,"mane"));
+  if(o.mane==="horse")add(2,6,H(P("M86 44 Q100 70 114 44 Q100 34 86 44 Z","mane")));
+  if(o.mane==="wool")add(2,6,H(O(86,46,10,"light")+O(100,40,12,"light")+O(114,46,10,"light")));
+  // 3 snout
+  add(3,6.5,H(sn.el()));
+  // neck for tall animals
+  if(o.neck)add(4,4.2,P(`M${X-11} ${f1(hy+30*s)} L${X+11} ${f1(hy+30*s)} L${X+14} 118 L${X-14} 118 Z`,"fur"));
+  // 4 body
+  const bx=n=>f1(X+n*w);
+  add(4,3,P(`M${bx(-22)} 106 C${bx(-30)} 128 ${bx(-32)} 150 ${bx(-28)} 172 L${bx(28)} 172 C${bx(32)} 150 ${bx(30)} 128 ${bx(22)} 106 Z`,"fur"));
+  if(o.belly!==false)add(4,3.5,E(X,148,f1(15*w),20,"light"));
+  if(o.mane==="wool")add(4,3.2,[[-24,120],[24,120],[-28,145],[28,145],[-22,166],[22,166],[0,112]].map(([dx,y])=>O(f1(X+dx*w),y,13,"light")).join(""));
+  // 5 legs
+  const hoof=o.hooves;
+  add(5,2,pair(E(bx(-28),160,13,15,"fur")));
+  add(5,4,L(`M${bx(-9)} 128 L${bx(-9)} 168 M${bx(9)} 128 L${bx(9)} 168`));
+  add(5,4.2,hoof?pair(P(`M${bx(-22)} 168 L${bx(-6)} 168 L${bx(-7)} 177 L${bx(-21)} 177 Z`,"dark")):pair(E(bx(-14),172,11,6,"fur")));
+  // 6 tail and markings
+  const tx=X+28*w;
+  const tails={
+    thin:P(`M${f1(tx-6)} 156 Q${f1(tx+24)} 150 ${f1(tx+20)} 118 Q${f1(tx+14)} 144 ${f1(tx-6)} 148 Z`,"fur"),
+    tuft:P(`M${f1(tx-6)} 156 Q${f1(tx+24)} 150 ${f1(tx+20)} 122 Q${f1(tx+14)} 144 ${f1(tx-6)} 148 Z`,"fur")+O(f1(tx+20),118,7,"mane"),
+    fluffy:P(`M${f1(tx-10)} 164 C${f1(tx+40)} 166 ${f1(tx+44)} 104 ${f1(tx+12)} 96 C${f1(tx+22)} 122 ${f1(tx+12)} 140 ${f1(tx-10)} 148 Z`,"fur")+P(`M${f1(tx+12)} 96 C${f1(tx+24)} 98 ${f1(tx+28)} 106 ${f1(tx+27)} 114 C${f1(tx+22)} 110 ${f1(tx+17)} 104 ${f1(tx+12)} 96 Z`,"light"),
+    curly:LN(`M${f1(tx-4)} 150 C${f1(tx+14)} 150 ${f1(tx+14)} 134 ${f1(tx+6)} 134 C${f1(tx)} 134 ${f1(tx)} 142 ${f1(tx+8)} 142`,"pink"),
+    stub:O(f1(tx+2),150,8,"light"),
+    long:P(`M${f1(tx-6)} 160 C${f1(tx+30)} 166 ${f1(tx+40)} 130 ${f1(tx+24)} 112 C${f1(tx+16)} 104 ${f1(tx+8)} 112 ${f1(tx+14)} 118 C${f1(tx+26)} 130 ${f1(tx+20)} 152 ${f1(tx-6)} 152 Z`,"fur"),
+    hair:P(`M${f1(tx-6)} 150 Q${f1(tx+18)} 150 ${f1(tx+22)} 130 Q${f1(tx+30)} 150 ${f1(tx+26)} 176 Q${f1(tx+14)} 168 ${f1(tx-6)} 158 Z`,"mane"),
+    none:""
+  };
+  let six=tails[o.tail||"thin"];
+  if(six)add(6,1,six);
+  if(o.marks){const m=MARKS[o.marks](X-30*w+2);if(m.head)add(6,5.5,H(m.head));if(m.body)add(6,3.6,m.body)}
+  const fc=sn.face;
+  const steps=["Draw a round head",o.s2||"Add the ears",o.s3||"Draw the snout and nose","Draw the body",o.hooves?"Add the legs and hooves":"Add the legs and paws",o.s6||"Add the tail"];
+  return{id,name,cat:"Land Animals",scene:o.scene||"day",steps,faceStep:3,
+    face:{x:100,y:f1(hy+(fc.y-80)*s),dx:f1(fc.dx*s),my:f1(hy+(fc.my-80)*s),s:f1(fc.s*s),mouth:fc.mouth,light:o.lightFace},
+    head:{x:100,y:f1(hy-40*s),w:f1(56*s)},base:{x:100,y:176,w:f1(84*w)},
+    colors:Object.assign({fur:"tan",light:"cream",dark:"charcoal",pink:"pink",ear:"brown",horn:"cream",muzzle:"peach",mane:"brown"},o.colors),main:"fur",parts};
+}
+
+const LAND=[
+ beast("cow","Cow",{ears:"side",horns:"cow",snout:"muzzle",hooves:true,tail:"tuft",marks:"patches",s2:"Add the ears and little horns",s6:"Add the tail and spots",colors:{fur:"white",light:"white",dark:"charcoal",muzzle:"lightPink",mane:"charcoal"}}),
+ beast("carabao","Carabao",{ears:"side",horns:"carabao",snout:"muzzle",hooves:true,tail:"tuft",belly:false,bw:1.1,s2:"Add the ears and big curved horns",colors:{fur:"charcoal",light:"gray",dark:"black",muzzle:"gray",horn:"gray",pink:"gray",mane:"black"}}),
+ beast("pig","Pig",{ears:"pointy",snout:"pig",tail:"curly",belly:false,bw:1.1,s3:"Draw the round snout",colors:{fur:"lightPink",pink:"pink",dark:"plum"}}),
+ beast("horse","Horse",{ears:"tall",snout:"muzzle",hooves:true,tail:"hair",mane:"horse",hw:.85,s2:"Add the tall ears and hair",colors:{fur:"brown",light:"tan",muzzle:"tan",mane:"darkBrown",pink:"tan"}}),
+ beast("goat","Goat",{ears:"side",horns:"goat",snout:"muzzle",hooves:true,tail:"stub",hw:.85,s2:"Add the ears and horns",colors:{fur:"snow",light:"white",muzzle:"lightPink",horn:"gray",pink:"lightPink"}}),
+ beast("sheep","Sheep",{ears:"side",snout:"muzzle",hooves:true,tail:"stub",mane:"wool",belly:false,s2:"Add the ears and fluffy wool",colors:{fur:"peach",light:"white",muzzle:"cream",pink:"lightPink"}}),
+ beast("lion","Lion",{ears:"round",snout:"bigcat",mane:"lion",tail:"tuft",s2:"Add the ears and a big mane",colors:{fur:"golden",light:"cream",mane:"orange",dark:"darkBrown"}}),
+ beast("tiger","Tiger",{ears:"round",snout:"bigcat",tail:"thin",marks:"stripes",s6:"Add the tail and stripes",colors:{fur:"orange",light:"white",dark:"charcoal"}}),
+ beast("elephant","Elephant",{ears:"big",snout:"trunk",hooves:false,tail:"thin",belly:false,bw:1.15,s2:"Add the big flappy ears",s3:"Draw the long trunk",colors:{fur:"gray",pink:"lightPink",light:"snow"}}),
+ beast("giraffe","Giraffe",{ears:"side",horns:"ossicone",snout:"muzzle",hooves:true,tail:"tuft",marks:"spots",neck:true,hr:26,hy:48,hw:.85,s2:"Add the ears and little horns",s6:"Add the tail and spots",colors:{fur:"golden",light:"cream",dark:"brown",muzzle:"cream",mane:"brown"}}),
+ beast("zebra","Zebra",{ears:"tall",snout:"muzzle",hooves:true,tail:"tuft",mane:"horse",marks:"stripes",hw:.85,s6:"Add the tail and stripes",colors:{fur:"white",light:"white",dark:"black",muzzle:"charcoal",mane:"black",pink:"lightPink"}}),
+ beast("monkey","Monkey",{ears:"monkey",snout:"monkey",tail:"long",s3:"Draw the face patch",colors:{fur:"brown",light:"peach",dark:"darkBrown"}}),
+ beast("panda","Panda",{ears:"round",snout:"dog",tail:"stub",marks:"panda",lightFace:true,s6:"Add the tail and eye patches",colors:{fur:"white",light:"white",dark:"black"}}),
+ beast("fox","Fox",{ears:"pointy",snout:"fox",tail:"fluffy",colors:{fur:"orange",light:"white",dark:"charcoal",pink:"charcoal"}}),
+ beast("mouse","Mouse",{ears:"mouse",snout:"mouse",tail:"curly",hr:30,hy:80,bw:.85,s2:"Add the big round ears",colors:{fur:"gray",light:"snow",pink:"lightPink"}}),
+ beast("deer","Deer",{ears:"tall",horns:"antlers",snout:"muzzle",hooves:true,tail:"stub",hw:.85,s2:"Add the ears and antlers",colors:{fur:"tan",light:"cream",muzzle:"cream",horn:"brown",pink:"peach"}})
+];
+
+/* birds and flying animals */
+function bird(id,name,o){
+  const parts=[],add=(st,z,el)=>parts.push({s:st,z,el}),w=o.bw||1,hy=o.hy||72,hr=o.hr||28;
+  if(o.neck)add(1,4.2,P(`M93 ${hy+10} C88 ${hy+40} 96 ${hy+56} 96 104 L104 104 C104 ${hy+56} 112 ${hy+40} 107 ${hy+10} Z`,"fur"));
+  add(1,5,O(100,hy,hr,"fur"));
+  if(o.owl)add(1,5.5,pair(O(88,hy,13,"light")));
+  const crest={tuft:P(`M96 ${hy-hr+4} C92 ${hy-hr-10} 98 ${hy-hr-16} 100 ${hy-hr-4} C102 ${hy-hr-16} 110 ${hy-hr-12} 104 ${hy-hr+4} Z`,"fur"),
+    comb:O(92,hy-hr+2,6,"comb")+O(100,hy-hr-2,7,"comb")+O(108,hy-hr+2,6,"comb"),
+    owl:pair(P(`M78 ${hy-hr+10} L80 ${hy-hr-10} L92 ${hy-hr+4} Z`,"fur")),
+    crown:[92,100,108].map(x=>LN(`M100 ${hy-hr+2} L${x} ${hy-hr-14}`,"wing")+O(x,hy-hr-16,3.5,"wing")).join(""),
+    bat:pair(P(`M82 ${hy-hr+8} L78 ${hy-hr-12} L94 ${hy-hr+2} Z`,"fur"))};
+  if(o.crest)add(2,4,crest[o.crest]);
+  const beaks={short:P(`M92 ${hy+6} L108 ${hy+6} L100 ${hy+17} Z`,"beak"),
+    hook:P(`M92 ${hy+4} Q100 ${hy-2} 108 ${hy+4} Q108 ${hy+18} 98 ${hy+22} Q103 ${hy+12} 92 ${hy+4} Z`,"beak"),
+    duck:E(100,hy+10,14,6,"beak"),
+    long:P(`M95 ${hy+4} L105 ${hy+4} L104 ${hy+14} Q100 ${hy+24} 94 ${hy+20} Q99 ${hy+16} 95 ${hy+4} Z`,"beak"),
+    none:""};
+  add(2,7,beaks[o.beak||"short"]);
+  if(o.comb)add(2,7.1,E(100,hy+22,4,6,"comb"));
+  add(3,3,E(100,o.by||130,f1(34*w),o.bh||40,"fur"));
+  if(o.belly!==false)add(3,3.5,E(100,(o.by||130)+8,f1(20*w),(o.bh||40)-12,"light"));
+  const wings={side:pair(P(`M${f1(100-33*w)} 112 C${f1(100-50*w)} 122 ${f1(100-50*w)} 150 ${f1(100-34*w)} 156 C${f1(100-27*w)} 140 ${f1(100-27*w)} 124 ${f1(100-33*w)} 112 Z`,"wing")),
+    spread:pair(P("M74 112 C46 88 18 92 6 108 C24 110 28 120 20 130 C38 124 48 132 70 134 Z","wing")),
+    bat:pair(P("M82 112 C60 92 30 90 8 104 C18 110 20 118 14 128 C26 120 34 124 36 134 C46 124 56 126 62 136 C66 124 74 120 84 126 Z","wing")),
+    flipper:pair(P("M68 112 C54 122 50 146 56 156 C64 146 68 130 72 118 Z","wing"))};
+  add(4,o.wings==="side"||o.wings==="flipper"?4:2,wings[o.wings||"side"]);
+  const tails={short:P("M90 162 L100 182 L110 162 Z","wing"),
+    fan:petals(100,o.by||130,13,20,84,10,"tail")+[0,1,2,3,4,5,6,7,8,9,10,11,12].map(i=>{const a=i*360/13-90;const p=pt(100,o.by||130,72,a).split(" ");return O(+p[0],+p[1],5,"eye")}).join(""),
+    long:P("M92 160 C80 184 86 196 94 196 L100 170 L106 196 C114 196 120 184 108 160 Z","tail"),
+    none:""};
+  add(5,1,tails[o.tail||"short"]);
+  const feet=o.feet==="flat"?pair(E(88,170,11,5,"feet")):o.legs==="long"?LN("M96 168 L94 196 M104 168 L108 182 L98 182","feet"):LN("M90 166 L86 180 M90 166 L91 180 M90 166 L96 178 M110 166 L114 180 M110 166 L109 180 M110 166 L104 178","feet");
+  if(o.feet!=="none")add(5,2.5,feet);
+  const steps=["Draw a round head",o.s2||"Add the beak","Draw the body",o.s4||"Add the wings",o.s5||"Add the tail and feet"];
+  return{id,name,cat:"Birds & Flying",scene:o.scene||"day",steps,faceStep:2,
+    face:{x:100,y:hy-2,dx:o.owl?12:11,my:0,s:o.owl?1.05:.85,mouth:o.mouth||false,light:o.lightFace},
+    head:{x:100,y:hy-hr+4,w:hr*1.6},base:{x:100,y:184,w:70},
+    colors:Object.assign({fur:"golden",light:"cream",wing:"golden",beak:"orange",feet:"orange",comb:"red",tail:"golden",eye:"teal"},o.colors),main:"fur",parts};
+}
+const AIR=[
+ bird("hen","Hen",{crest:"comb",comb:true,s2:"Add the comb and beak",colors:{fur:"brown",light:"tan",wing:"darkBrown",tail:"darkBrown",beak:"golden",feet:"golden"}}),
+ bird("duck","Duck",{beak:"duck",feet:"flat",tail:"short",colors:{fur:"white",light:"white",wing:"snow",beak:"orange",feet:"orange"}}),
+ bird("owl","Owl",{owl:true,crest:"owl",beak:"short",bh:44,s2:"Add the ear tufts and beak",colors:{fur:"brown",light:"cream",wing:"darkBrown",beak:"golden",feet:"golden",tail:"darkBrown"}}),
+ bird("parrot","Parrot",{beak:"hook",crest:"tuft",tail:"long",colors:{fur:"leaf",light:"lime",wing:"sky",tail:"red",beak:"charcoal",feet:"gray"}}),
+ bird("eagle","Eagle",{beak:"hook",wings:"spread",tail:"short",belly:false,s4:"Add wide open wings",colors:{fur:"darkBrown",light:"white",wing:"brown",tail:"white",beak:"golden",feet:"golden"},white:true}),
+ bird("penguin","Penguin",{beak:"short",wings:"flipper",feet:"flat",tail:"none",lightFace:false,bh:46,s4:"Add the flippers",scene:"night",colors:{fur:"charcoal",light:"white",wing:"charcoal",beak:"orange",feet:"orange"}}),
+ bird("flamingo","Flamingo",{beak:"long",neck:true,hy:40,hr:20,by:124,bh:30,legs:"long",tail:"none",belly:false,s4:"Add the wings",s5:"Add the long legs",scene:"sunset",colors:{fur:"pink",light:"lightPink",wing:"coral",beak:"charcoal",feet:"coral"}}),
+ bird("peacock","Peacock",{crest:"crown",tail:"fan",beak:"short",s2:"Add the crown and beak",s5:"Add the big fan tail",colors:{fur:"teal",light:"sky",wing:"teal",tail:"leaf",eye:"navy",beak:"gray",feet:"gray"}}),
+ bird("maya","Maya Bird",{beak:"short",tail:"short",colors:{fur:"brown",light:"cream",wing:"darkBrown",beak:"charcoal",feet:"tan",tail:"darkBrown"}}),
+ bird("dove","Dove",{beak:"short",wings:"spread",tail:"short",belly:false,s4:"Add wide open wings",scene:"dreamy",colors:{fur:"white",light:"white",wing:"snow",tail:"snow",beak:"coral",feet:"coral"}}),
+ bird("bat","Bat",{crest:"bat",beak:"none",wings:"bat",tail:"none",feet:"none",hr:22,hy:80,by:126,bh:26,bw:.6,belly:false,s2:"Add the pointy ears",s4:"Add the big bat wings",s5:"Add the tiny feet",lightFace:true,mouth:true,scene:"night",colors:{fur:"charcoal",wing:"violet",light:"gray"}})
+];
+
+/* hand-drawn sea creatures */
+const SEA=[
+ {id:"whale",name:"Whale",cat:"Water Animals",scene:"ocean",steps:["Draw a big rounded body","Add the tail","Add the belly and fin","Add a water spout"],
+  faceStep:3,face:{x:56,y:108,dx:12,my:124,s:.8},head:{x:60,y:80,w:50},base:{x:100,y:160,w:130},colors:{fur:"navy",light:"sky",spout:"lightSky"},main:"fur",
+  parts:[{s:1,z:5,el:P("M18 122 C18 82 74 72 124 86 C148 94 160 112 164 124 C150 150 64 156 32 142 C22 138 18 130 18 122 Z","fur")},
+   {s:2,z:4,el:P("M158 116 L188 92 C192 110 188 128 186 142 L160 130 Z","fur")},
+   {s:3,z:6,el:P("M24 132 C50 148 112 150 156 132 C120 142 60 142 24 132 Z","light")},{s:3,z:6,el:P("M86 138 C90 158 106 162 110 150 Z","fur")},
+   {s:4,z:7,el:drop(60,52,"spout")+drop(48,40,"spout")+drop(72,40,"spout")+LN("M60 74 L60 66 M54 74 L50 66 M66 74 L70 66","spout")}]},
+ {id:"dolphin",name:"Dolphin",cat:"Water Animals",scene:"ocean",steps:["Draw a long curved body","Add the nose","Add the fins","Add the tail"],
+  faceStep:2,face:{x:58,y:96,dx:9,my:112,s:.75},head:{x:66,y:76,w:40},base:{x:100,y:160,w:120},colors:{fur:"sky",light:"snow",fin:"sky"},main:"fur",
+  parts:[{s:1,z:5,el:P("M40 104 C52 80 110 74 146 94 C160 102 168 114 170 124 C150 132 110 136 70 128 C54 124 44 116 40 104 Z","fur")},
+   {s:1,z:5.5,el:P("M48 114 C70 128 120 132 160 124 C120 126 80 124 48 114 Z","light")},
+   {s:2,z:4.9,el:P("M44 102 L18 108 C16 112 20 116 26 116 L48 116 Z","fur")},
+   {s:3,z:4,el:P("M96 80 C104 58 120 56 124 60 C114 68 112 78 114 86 Z","fin")+P("M90 126 C86 142 96 150 104 146 C100 140 102 132 104 128 Z","fin")},
+   {s:4,z:4,el:P("M164 118 L186 96 C190 108 184 116 178 122 C186 128 192 138 190 150 Z","fin")}]},
+ {id:"shark",name:"Shark",cat:"Water Animals",scene:"ocean",steps:["Draw a long body","Add the pointy fin on top","Add the side fins and gills","Add the tail"],
+  faceStep:3,face:{x:46,y:104,dx:8,my:118,s:.75},head:{x:54,y:84,w:40},base:{x:100,y:160,w:120},colors:{fur:"gray",light:"white",fin:"gray"},main:"fur",
+  parts:[{s:1,z:5,el:P("M16 114 C30 88 100 82 150 100 C160 104 166 112 168 118 C150 130 100 138 50 132 C30 128 18 122 16 114 Z","fur")},
+   {s:1,z:5.5,el:P("M22 120 C50 134 120 136 160 122 C120 128 60 130 22 120 Z","light")},
+   {s:2,z:4,el:P("M84 92 L104 52 C108 66 112 84 120 96 Z","fin")},
+   {s:3,z:6,el:P("M80 128 L70 152 L96 132 Z","fin")+L("M62 104 Q58 112 62 120 M68 104 Q64 112 68 120 M74 104 Q70 112 74 120")},
+   {s:4,z:4,el:P("M160 112 L188 82 C186 100 182 110 176 116 C184 124 188 136 188 150 Z","fin")}]},
+ {id:"octopus",name:"Octopus",cat:"Water Animals",scene:"ocean",steps:["Draw a round head like a balloon","Add four wiggly arms on each side","Add the suction cups"],
+  faceStep:1,face:{x:100,y:92,dx:15,my:108,s:1},head:{x:100,y:44,w:60},base:{x:100,y:180,w:110},colors:{fur:"violet",light:"lavender"},main:"fur",
+  parts:[{s:1,z:5,el:P("M58 110 C52 40 148 40 142 110 C130 122 70 122 58 110 Z","fur")},
+   {s:2,z:4,el:pair(P("M64 108 C40 120 30 150 44 168 C50 160 44 140 72 116 Z","fur"))+pair(P("M78 114 C66 136 60 162 74 182 C78 170 76 150 88 120 Z","fur"))},
+   {s:3,z:6,el:[[46,150],[42,160],[68,156],[70,168],[154,150],[158,160],[132,156],[130,168]].map(([x,y])=>O(x,y,3,"light")).join("")}]},
+ {id:"crab",name:"Crab",cat:"Water Animals",scene:"ocean",steps:["Draw a wide oval body","Add two eyes on sticks","Add the big claws","Add the legs"],
+  faceStep:2,face:{x:100,y:84,dx:16,my:126,s:.9},head:{x:100,y:64,w:50},base:{x:100,y:150,w:120},colors:{fur:"red",light:"white",dark:"charcoal"},main:"fur",
+  parts:[{s:1,z:5,el:E(100,122,46,28,"fur")},
+   {s:2,z:4,el:L("M84 100 L84 90 M116 100 L116 90")+pair(O(84,84,9,"light"))},
+   {s:3,z:4,el:pair(P("M58 112 C40 104 30 84 36 70 C44 64 56 72 52 82 C60 76 62 66 54 60 C70 62 70 90 64 104 Z","fur"))},
+   {s:4,z:3,el:pair(LN("M58 128 L34 138 L28 150 M60 136 L40 150 L36 162 M66 142 L52 158 L50 170","fur"))}]},
+ {id:"starfish",name:"Starfish",cat:"Water Animals",scene:"ocean",steps:["Draw a star with five round points","Add little dots"],
+  faceStep:1,face:{x:100,y:100,dx:12,my:116,s:.9},head:{x:100,y:46,w:40},base:{x:100,y:178,w:110},colors:{fur:"coral",light:"peach"},main:"fur",
+  parts:[{s:1,z:5,el:P((()=>{let d="";for(let i=0;i<10;i++){const r=i%2?30:72;d+=(i?" L":"M")+pt(100,108,r,i*36-90)}return d+" Z"})(),"fur")},
+   {s:2,z:6,el:[[100,52],[100,64],[54,94],[66,98],[146,94],[134,98],[72,150],[80,140],[128,150],[120,140]].map(([x,y])=>O(x,y,3,"light")).join("")}]},
+ {id:"jellyfish",name:"Jellyfish",cat:"Water Animals",scene:"ocean",steps:["Draw an umbrella shape","Add wavy ribbons hanging down"],
+  faceStep:1,face:{x:100,y:84,dx:14,my:100,s:.9},head:{x:100,y:44,w:60},base:{x:100,y:190,w:0},colors:{fur:"lavender",light:"lightPink"},main:"fur",
+  parts:[{s:1,z:5,el:P("M54 108 C50 48 150 48 146 108 C140 102 132 112 124 106 C116 112 108 104 100 110 C92 104 84 112 76 106 C68 112 60 102 54 108 Z","fur")},
+   {s:2,z:4,el:[70,88,112,130].map((x,i)=>LN(`M${x} 108 C${x-8} 124 ${x+8} 140 ${x} 156 C${x-8} 170 ${x+6} 180 ${x} 190`,i%2?"light":"fur")).join("")}]},
+ {id:"seahorse",name:"Seahorse",cat:"Water Animals",scene:"ocean",steps:["Draw a round head and long nose","Draw a round tummy","Add a curly tail","Add the back fin and spikes"],
+  faceStep:1,face:{x:104,y:62,dx:7,my:0,s:.7,mouth:false},head:{x:104,y:40,w:30},base:{x:100,y:190,w:0},colors:{fur:"golden",light:"paleYellow",fin:"orange"},main:"fur",
+  parts:[{s:1,z:5,el:O(104,62,20,"fur")+P("M88 60 L58 56 L58 68 L88 72 Z","fur")},
+   {s:2,z:4,el:P("M96 78 C80 96 82 136 104 148 C124 140 128 104 112 80 Z","fur")+P("M98 96 C92 110 94 130 104 140 C108 124 106 104 98 96 Z","light")},
+   {s:3,z:3.5,el:LN("M106 146 C112 172 92 184 84 172 C78 162 90 156 96 164","fur")},
+   {s:4,z:3,el:P("M118 98 C138 104 140 124 122 130 Z","fin")+P("M110 44 L114 32 L118 46 L124 38 L124 52 Z","fin")}]},
+ {id:"seal",name:"Seal",cat:"Water Animals",scene:"night",steps:["Draw a round head","Add the nose and whiskers","Draw a long smooth body","Add the flippers"],
+  faceStep:2,face:{x:100,y:66,dx:14,my:90,s:.9},head:{x:100,y:42,w:50},base:{x:100,y:180,w:90},colors:{fur:"gray",light:"snow",dark:"charcoal"},main:"fur",
+  parts:[{s:1,z:5,el:O(100,72,30,"fur")},
+   {s:2,z:6,el:E(100,84,14,10,"light")+E(100,79,5,4,"dark")+L("M60 84 L84 86 M60 92 L84 90 M140 84 L116 86 M140 92 L116 90")},
+   {s:3,z:3,el:P("M74 92 C60 130 66 166 100 176 C134 166 140 130 126 92 Z","fur")+E(100,140,16,26,"light")},
+   {s:4,z:4,el:pair(P("M74 128 C58 136 52 150 58 156 C66 150 72 142 80 138 Z","fur"))+pair(P("M84 170 C70 180 64 188 70 190 C80 188 88 182 94 176 Z","fur"))}]},
+ {id:"pufferfish",name:"Pufferfish",cat:"Water Animals",scene:"ocean",steps:["Draw a big round ball","Add spikes all around","Add the fins and tail"],
+  faceStep:1,face:{x:100,y:96,dx:16,my:120,s:1},head:{x:100,y:52,w:60},base:{x:100,y:180,w:90},colors:{fur:"paleYellow",light:"cream",spike:"orange",fin:"orange"},main:"fur",
+  parts:[{s:1,z:5,el:O(100,106,46,"fur")},{s:2,z:4,el:rays(100,106,18,44,58,"spike")},
+   {s:3,z:6,el:pair(P("M60 112 C48 104 42 120 54 124 Z","fin"))+P("M146 96 L170 84 L166 106 L170 128 L146 116 Z","fin")}]},
+ {id:"clownfish",name:"Clownfish",cat:"Water Animals",scene:"ocean",steps:["Draw a lemon-shaped body","Add a tail","Add the fins","Add three white stripes"],
+  faceStep:3,face:{x:74,y:92,dx:11,my:106,s:.8},head:{x:80,y:66,w:40},base:{x:105,y:150,w:110},colors:{fur:"orange",fin:"orange",stripe:"white"},main:"fur",
+  parts:[{s:1,z:5,el:P("M36 100 C56 58 132 58 150 100 C132 142 56 142 36 100 Z","fur")},
+   {s:2,z:4,el:P("M146 100 L180 74 C176 92 176 108 180 126 Z","fin")},
+   {s:3,z:4,el:P("M80 68 C90 46 116 48 124 72 Z","fin")+P("M88 132 C94 150 110 150 116 130 Z","fin")},
+   {s:4,z:6,el:P("M88 66 C80 84 80 116 88 134 L98 135 C90 116 90 84 98 64 Z","stripe")+P("M124 72 C118 88 118 112 124 128 L132 124 C126 110 126 90 132 76 Z","stripe")+P("M50 80 C46 92 46 108 50 120 L56 124 C52 108 52 92 56 76 Z","stripe")}]}
+];
+
+/* insects and bugs */
+const BUGS=[
+ {id:"bee",name:"Bee",cat:"Insects & Bugs",scene:"day",steps:["Draw a round head","Draw an oval body","Add the stripes","Add the wings and stinger","Add the antennae"],
+  faceStep:1,face:{x:100,y:70,dx:9,my:80,s:.75},head:{x:100,y:48,w:36},base:{x:100,y:166,w:70},colors:{fur:"golden",dark:"charcoal",wing:"lightSky"},main:"fur",
+  parts:[{s:1,z:5,el:O(100,72,22,"fur")},{s:2,z:4,el:E(100,128,34,32,"fur")},
+   {s:3,z:4.5,el:P("M72 112 L128 112 L130 122 L70 122 Z","dark")+P("M69 134 L131 134 L129 144 L71 144 Z","dark")},
+   {s:4,z:3,el:pair(E(66,100,20,13,"wing"))+P("M94 158 L100 172 L106 158 Z","dark")},
+   {s:5,z:4,el:pair(LN("M92 52 C88 40 82 34 76 34","dark"))+pair(O(76,34,4,"dark"))}]},
+ {id:"ant",name:"Ant",cat:"Insects & Bugs",scene:"day",steps:["Draw a round head","Add a small middle part","Add a big back part","Add six legs","Add the antennae"],
+  faceStep:1,face:{x:100,y:60,dx:8,my:70,s:.7},head:{x:100,y:42,w:32},base:{x:100,y:176,w:60},colors:{fur:"red",dark:"charcoal"},main:"fur",
+  parts:[{s:1,z:5,el:O(100,62,18,"fur")},{s:2,z:4,el:E(100,96,11,14,"fur")},{s:3,z:4,el:E(100,140,24,30,"fur")},
+   {s:4,z:3,el:pair(LN("M90 90 L68 80 L58 92 M90 98 L64 102 L56 116 M92 106 L72 122 L70 138","dark"))},
+   {s:5,z:4,el:pair(LN("M94 46 C88 30 80 24 72 26","dark"))}]},
+ {id:"caterpillar",name:"Caterpillar",cat:"Insects & Bugs",scene:"day",steps:["Draw a big round head","Add a row of circles for the body","Add little feet","Add the antennae"],
+  faceStep:1,face:{x:44,y:110,dx:9,my:124,s:.75},head:{x:44,y:88,w:34},base:{x:110,y:150,w:140},colors:{fur:"leaf",light:"lime",dark:"charcoal"},main:"fur",
+  parts:[{s:1,z:5,el:O(44,114,22,"fur")},
+   {s:2,z:4,el:[[74,126,17],[100,120,17],[126,126,17],[152,130,16],[174,132,13]].map(([x,y,r],i)=>O(x,y,r,i%2?"light":"fur")).join("")},
+   {s:3,z:3,el:[74,100,126,152].map(x=>E(x,144,5,4,"dark")).join("")},
+   {s:4,z:4,el:LN("M38 94 C34 82 30 78 24 78 M50 94 C54 82 58 78 64 78","dark")+O(24,78,3.5,"dark")+O(64,78,3.5,"dark")}]},
+ {id:"snail",name:"Snail",cat:"Insects & Bugs",scene:"day",steps:["Draw a long slug body","Add a big round shell","Draw a spiral on the shell","Add the eye stalks"],
+  faceStep:4,face:{x:52,y:84,dx:9,my:104,s:.7},head:{x:52,y:80,w:30},base:{x:100,y:152,w:140},colors:{fur:"peach",shell:"brown",light:"tan"},main:"shell",
+  parts:[{s:1,z:3,el:P("M30 150 C24 120 40 96 56 98 C70 100 72 126 80 140 L170 140 C178 140 180 150 170 152 Z","fur")},
+   {s:2,z:4,el:O(118,104,38,"shell")},{s:3,z:5,el:LN("M118 104 C126 104 126 94 118 94 C106 94 104 112 118 114 C134 116 136 90 120 84 C100 78 90 104 100 120","light")},
+   {s:4,z:2,el:LN("M44 102 L36 76 M58 100 L62 74","fur")+O(36,74,4,"fur")+O(62,72,4,"fur")}]},
+ {id:"spider",name:"Spider",cat:"Insects & Bugs",scene:"night",steps:["Draw a small round head","Add a big round body","Add four legs on each side","Hang it from a thread"],
+  faceStep:1,face:{x:100,y:86,dx:9,my:98,s:.8,light:true},head:{x:100,y:66,w:30},base:{x:100,y:190,w:0},colors:{fur:"charcoal",dark:"black",thread:"gray"},main:"fur",
+  parts:[{s:1,z:5,el:O(100,88,18,"fur")},{s:2,z:4,el:O(100,132,30,"fur")},
+   {s:3,z:3,el:pair(LN("M78 116 L52 96 L40 112 M74 126 L44 120 L34 140 M76 138 L48 146 L44 166 M82 150 L62 168 L64 186","fur"))},
+   {s:4,z:2,el:LN("M100 70 L100 4","thread")}]},
+ {id:"dragonfly",name:"Dragonfly",cat:"Insects & Bugs",scene:"day",steps:["Draw a round head","Draw a long thin body","Add two big wings on each side","Add stripes on the tail"],
+  faceStep:1,face:{x:100,y:44,dx:10,my:56,s:.8},head:{x:100,y:24,w:30},base:{x:100,y:190,w:0},colors:{fur:"teal",wing:"lightSky",dark:"navy"},main:"fur",
+  parts:[{s:1,z:5,el:O(100,46,18,"fur")},{s:2,z:4,el:E(100,70,10,10,"fur")+P("M95 76 L105 76 L103 184 L97 184 Z","fur")},
+   {s:3,z:3,el:pair(P("M92 66 C70 50 20 50 14 64 C22 76 70 76 92 72 Z","wing"))+pair(P("M92 78 C70 82 28 96 26 108 C40 116 74 98 92 84 Z","wing"))},
+   {s:4,z:4.5,el:[100,116,132,148,164].map(y=>P(`M96 ${y} L104 ${y} L104 ${y+5} L96 ${y+5} Z`,"dark")).join("")}]},
+ {id:"grasshopper",name:"Grasshopper",cat:"Insects & Bugs",scene:"day",steps:["Draw an oval head","Add a long body","Add the big jumping leg","Add the small legs and antennae"],
+  faceStep:1,face:{x:50,y:92,dx:8,my:106,s:.7},head:{x:50,y:72,w:30},base:{x:100,y:160,w:130},colors:{fur:"leaf",light:"lime",dark:"darkGreen"},main:"fur",
+  parts:[{s:1,z:5,el:E(52,96,20,22,"fur")},{s:2,z:4,el:P("M66 90 C100 80 160 90 176 110 C160 124 100 122 66 112 Z","fur")+P("M80 100 C110 96 150 100 168 110 C140 112 100 110 80 100 Z","light")},
+   {s:3,z:5,el:P("M130 108 L112 60 L122 58 L150 112 Z","dark")+LN("M116 60 L104 148","dark")},
+   {s:4,z:3,el:LN("M76 112 L70 146 M92 114 L90 146 M44 80 C36 52 30 40 18 34 M54 78 C56 50 62 38 74 30","dark")}]},
+ {id:"firefly",name:"Firefly",cat:"Insects & Bugs",scene:"night",steps:["Draw a round head","Draw the body","Add a glowing tail","Add the wings and antennae"],
+  faceStep:1,face:{x:100,y:66,dx:9,my:76,s:.75},head:{x:100,y:46,w:34},base:{x:100,y:190,w:0},colors:{fur:"charcoal",glow:"paleYellow",wing:"lightSky",shell:"darkBrown"},main:"glow",
+  parts:[{s:1,z:5,el:O(100,68,18,"fur")},{s:2,z:4,el:E(100,104,22,26,"shell")},
+   {s:3,z:4.5,el:O(100,140,30,"glow")+O(100,140,18,"glow")},
+   {s:4,z:3,el:pair(E(74,96,18,12,"wing"))+pair(LN("M92 54 C88 40 82 32 74 30","fur"))}]},
+ {id:"beetle",name:"Beetle",cat:"Insects & Bugs",scene:"day",steps:["Draw a big oval shell","Add a round head with a horn","Draw a line down the shell","Add six legs"],
+  faceStep:2,face:{x:100,y:62,dx:10,my:74,s:.75,light:true},head:{x:100,y:30,w:30},base:{x:100,y:172,w:90},colors:{fur:"teal",head:"navy",dark:"charcoal"},main:"fur",
+  parts:[{s:1,z:5,el:E(100,124,40,46,"fur")},{s:2,z:6,el:E(100,70,24,18,"head")+P("M96 54 L100 22 L106 30 L104 54 Z","head")},
+   {s:3,z:6,el:L("M100 86 L100 168")},{s:4,z:3,el:pair(LN("M64 104 L40 92 M62 124 L36 124 M66 146 L44 164","dark"))}]},
+ {id:"worm",name:"Earthworm",cat:"Insects & Bugs",scene:"day",steps:["Draw a wiggly tube","Add lines around the body"],
+  faceStep:1,face:{x:166,y:132,dx:7,my:146,s:.7},head:{x:168,y:112,w:28},base:{x:100,y:182,w:150},colors:{fur:"pink",dark:"magenta"},main:"fur",
+  parts:[{s:1,z:5,el:P("M24 156 C44 124 70 124 90 154 C110 184 130 184 148 154 C158 138 168 128 178 128 C190 130 190 150 178 152 C170 152 164 158 160 164 C140 196 106 196 82 166 C64 142 54 142 40 166 C34 174 20 168 24 156 Z","fur")},
+   {s:2,z:6,el:L("M50 140 L58 148 M64 138 L66 150 M110 176 L112 186 M124 174 L130 184 M150 154 L158 160")}]}
+];
+
+/* people at work */
+function person(id,name,o){
+  const parts=[],add=(st,z,el)=>parts.push({s:st,z,el});
+  add(1,5,O(100,58,26,"skin"));
+  const hair={short:P("M74 58 C70 26 130 26 126 58 C120 42 80 42 74 58 Z","hair"),
+    long:P("M72 56 C66 22 134 22 128 56 L132 100 L68 100 Z","hair"),
+    bun:P("M74 58 C70 26 130 26 126 58 C120 42 80 42 74 58 Z","hair")+O(100,28,11,"hair")};
+  add(2,o.hair==="long"?2.5:6,hair[o.hair||"short"]);
+  if(o.hair==="long")add(2,6,P("M76 52 C78 34 122 34 124 52 C112 42 88 42 76 52 Z","hair"));
+  add(3,3,P("M70 92 Q100 82 130 92 L136 142 L64 142 Z","shirt")+P("M94 82 L106 82 L106 92 L94 92 Z","skin"));
+  add(3,3.5,pair(P("M70 94 C58 104 54 124 56 140 L66 140 C64 124 68 110 76 102 Z","shirt")));
+  add(3,3.6,pair(O(61,144,6,"skin")));
+  if(o.coat)add(3,3.4,P("M68 90 L88 90 L100 120 L112 90 L132 90 L140 172 L60 172 Z","coat"));
+  add(4,2,P("M72 140 L128 140 L126 176 L104 176 L100 152 L96 176 L74 176 Z","pants"));
+  add(4,2.5,pair(E(85,180,13,5,"shoe")));
+  add(5,7,o.hat||"");
+  add(6,8,o.tool||"");
+  return{id,name,cat:"People at Work",scene:o.scene||"day",
+    steps:["Draw a round head","Add the hair","Draw the shirt and arms","Add the pants and shoes",o.s5||"Add the hat",o.s6||"Add the tools of the job"],
+    faceStep:2,face:{x:100,y:58,dx:10,my:70,s:.72},head:{x:100,y:34,w:44},base:{x:100,y:182,w:70},
+    colors:Object.assign({skin:"skin",hair:"darkBrown",shirt:"sky",pants:"navy",shoe:"charcoal",coat:"white",hat:"white",tool:"gray",accent:"red"},o.colors),main:"shirt",parts};
+}
+const PEOPLE=[
+ person("doctor","Doctor",{coat:true,s5:"Add the stethoscope",hat:LN("M88 92 C84 116 92 124 100 124 C108 124 116 116 112 92","tool")+O(100,126,5,"tool"),
+   s6:"Add a clipboard",tool:P("M128 120 L150 116 L154 146 L132 150 Z","accent")+P("M132 124 L148 121 L151 143 L135 146 Z","white"),colors:{shirt:"sky",accent:"brown"}}),
+ person("nurse","Nurse",{hair:"bun",s5:"Add the nurse cap",hat:P("M80 38 L120 38 L116 26 L84 26 Z","hat")+P("M98 28 L102 28 L102 36 L98 36 Z M95 30 L105 30 L105 34 L95 34 Z","accent"),
+   s6:"Add a little first-aid kit",tool:P("M128 138 L156 138 L156 158 L128 158 Z","white")+P("M140 141 L144 141 L144 155 L140 155 Z M135 146 L149 146 L149 150 L135 150 Z","accent"),colors:{shirt:"mint",pants:"mint"}}),
+ person("teacher","Teacher",{hair:"long",s5:"Add glasses",hat:`<g>${pair(O(90,58,7,"none"))}</g>`.replace(/data-c="none"/g,'data-c="none" data-k="tool"')+LN("M97 58 L103 58","tool"),
+   s6:"Add a book",tool:P("M126 122 L150 116 L152 148 L128 152 Z","accent")+LN("M138 120 L140 150","white"),colors:{shirt:"coral",pants:"navy",accent:"navy",tool:"charcoal"}}),
+ person("firefighter","Firefighter",{s5:"Add the fire helmet",hat:P("M72 46 C72 18 128 18 128 46 Z","hat")+E(100,46,34,6,"hat")+O(100,32,6,"accent"),
+   s6:"Add the water hose",tool:LN("M60 146 C40 160 30 180 50 190 C70 196 140 190 160 180","tool")+P("M150 174 L172 168 L174 180 L152 186 Z","golden"),colors:{shirt:"red",pants:"charcoal",hat:"red",accent:"golden",tool:"golden"}}),
+ person("police","Police Officer",{s5:"Add the police cap",hat:P("M72 42 C72 22 128 22 128 42 Z","hat")+E(100,42,30,5,"black")+O(100,32,5,"accent"),
+   s6:"Add a shiny badge",tool:P("M112 104 L118 98 L124 104 L122 112 L114 112 Z","accent"),colors:{shirt:"navy",pants:"navy",hat:"navy",accent:"golden"}}),
+ person("farmer","Farmer",{s5:"Add the salakot hat",hat:P("M58 44 L100 16 L142 44 Q100 52 58 44 Z","hat")+L("M100 16 L100 44"),
+   s6:"Add a bundle of rice",tool:LN("M140 150 L150 110 M144 150 L158 112 M148 150 L164 116","tool")+[[150,108],[158,110],[164,114]].map(([x,y])=>E(x,y,3,6,"golden")).join(""),colors:{shirt:"white",pants:"brown",hat:"golden",tool:"leaf"}}),
+ person("chef","Chef",{coat:true,s5:"Add the tall chef hat",hat:P("M80 40 L120 40 L118 30 L82 30 Z","hat")+O(86,22,12,"hat")+O(100,16,14,"hat")+O(114,22,12,"hat"),
+   s6:"Add a cooking spoon",tool:LN("M136 150 L156 104","tool")+E(158,98,6,9,"tool"),colors:{shirt:"white",pants:"charcoal",tool:"brown"}}),
+ person("astronaut","Astronaut",{s5:"Add the space helmet",hat:`<circle cx="100" cy="58" r="36" data-c="none"/>`+P("M114 34 C124 38 130 46 132 56 C126 48 120 42 114 34 Z","white"),
+   s6:"Add the backpack and flag",tool:P("M136 96 L152 96 L152 140 L136 140 Z","gray")+LN("M60 146 L56 100","tool")+P("M56 100 L36 104 L36 116 L56 112 Z","accent"),scene:"night",colors:{shirt:"white",pants:"white",shoe:"gray",accent:"red",tool:"gray"}}),
+ person("pilot","Pilot",{s5:"Add the pilot cap",hat:P("M72 42 C72 22 128 22 128 42 Z","hat")+E(100,42,30,5,"black")+P("M90 30 L100 34 L110 30 L100 38 Z","accent"),
+   s6:"Add wings on the shirt",tool:P("M106 104 L124 100 L118 106 L124 110 L106 108 Z","accent"),colors:{shirt:"white",pants:"navy",hat:"navy",accent:"golden"}}),
+ person("painter","Painter",{s5:"Add a beret",hat:E(100,34,30,10,"hat")+O(100,24,4,"hat"),
+   s6:"Add a palette and brush",tool:E(150,130,18,13,"cream")+[["red",142,126],["golden",150,122],["sky",158,126],["leaf",154,136]].map(([c,x,y])=>O(x,y,3.5,c)).join("")+LN("M56 146 L44 112","brown"),colors:{shirt:"golden",pants:"navy",hat:"red"}}),
+ person("builder","Builder",{s5:"Add the hard hat",hat:P("M74 44 C74 20 126 20 126 44 Z","hat")+E(100,44,32,5,"hat"),
+   s6:"Add a hammer",tool:LN("M140 150 L150 112","brown")+P("M140 108 L162 112 L160 120 L138 116 Z","gray"),colors:{shirt:"orange",pants:"navy",hat:"golden"}}),
+ person("fisherman","Fisherman",{s5:"Add a bucket hat",hat:P("M76 42 C76 22 124 22 124 42 Z","hat")+E(100,42,32,6,"hat"),
+   s6:"Add a fishing rod and a fish",tool:LN("M136 150 L176 40 L176 90","tool")+P("M168 92 C176 84 186 88 188 96 C186 104 176 108 168 100 L160 104 L160 88 Z","accent"),scene:"ocean",colors:{shirt:"teal",pants:"tan",hat:"tan",accent:"orange",tool:"brown"}}),
+ person("scientist","Scientist",{coat:true,s5:"Add safety goggles",hat:pair(E(89,46,9,6,"lightSky"))+LN("M74 46 L126 46","tool"),
+   s6:"Add a bubbling flask",tool:P("M140 112 L148 112 L148 124 L160 148 L128 148 L140 124 Z","mint")+O(144,104,3,"mint")+O(150,96,2.5,"mint"),colors:{shirt:"violet",pants:"charcoal",tool:"charcoal"}}),
+ person("mailcarrier","Mail Carrier",{s5:"Add the cap",hat:P("M72 42 C72 22 128 22 128 42 Z","hat")+E(108,42,26,5,"hat"),
+   s6:"Add the mail bag and a letter",tool:LN("M76 92 L122 140","brown")+P("M116 134 L148 134 L146 162 L118 162 Z","brown")+P("M124 126 L146 126 L146 140 L124 140 Z","white"),colors:{shirt:"sky",pants:"navy",hat:"navy"}})
+];
+
+SUBJECTS.push(...LAND,...AIR,...SEA,...BUGS,...PEOPLE);
 const SUB=Object.fromEntries(SUBJECTS.map(s=>[s.id,s]));
-const CATS=[...new Set(SUBJECTS.map(s=>s.cat))];
+const CATS=["Land Animals","Birds & Flying","Water Animals","Insects & Bugs","People at Work","Plants","Sky & Weather"];
+const ANIMAL_CATS=CATS.slice(0,4);
 
 /* ───────────── feelings ───────────── */
 const EMO=[
@@ -624,18 +967,19 @@ const TECHS=Object.fromEntries(TECH.map(t=>[t.id,t]));
 
 /* ───────────── state ───────────── */
 const KEY="bloom-studio:v1";
-const DEF={view:"studio",sub:"puppy",cat:"Animals",lvl:1,tech:"draw",emo:"happy",extra:"none",mood:"natural",mine:"lavender",scene:"auto",step:0,mode:"step",artist:"",
+const DEF={view:"studio",sub:"puppy",cat:"Land Animals",lvl:1,tech:"draw",emo:"happy",extra:"none",mood:"natural",mine:"lavender",scene:"auto",step:0,mode:"step",artist:"",
   done:[],labWins:0,ps:{id:null,tab:"about",stage:0,mins:3,filter:"ph",grid:false},studied:{},notes:{}};
 let st=Object.assign({},DEF);
 try{const raw=localStorage.getItem(KEY);if(raw)st=Object.assign(st,JSON.parse(raw))}catch(e){}
 if(!SUB[st.sub])st.sub="puppy";
+if(!CATS.includes(st.cat))st.cat=SUB[st.sub].cat;
 function save(){try{localStorage.setItem(KEY,JSON.stringify(st))}catch(e){}}
 
 /* ───────────── color resolution ───────────── */
 function palette(sub,o){
   const out={};for(const k in sub.colors){let name=sub.colors[k];if(o.mood==="mine"&&k===sub.main)name=o.mine;out[k]=name}return out}
 function colorHex(sub,o,key){
-  const name=palette(sub,o)[key];let h=name?col(name):"#cccccc";
+  const name=palette(sub,o)[key]||(LIB[key]?key:null);let h=name?col(name):"#cccccc";
   if(o.mood==="pastel")h=lighten(h,.45);return h}
 
 /* ───────────── frame building ─────────────
@@ -1568,7 +1912,7 @@ const BADGES=[
  {id:"mix",n:"Color wizard",d:"Match a color in the Color Lab",ok:()=>st.labWins>=1,c:"#8a7fcf"},
  {id:"look",n:"Art lover",d:"Study 3 paintings",ok:()=>Object.keys(st.studied).length>=3,c:"#7D1F24"},
  {id:"pinoy",n:"Filipino masters",d:"Study 5 Filipino paintings",ok:()=>Object.keys(st.studied).filter(k=>PAI[k]&&ARTISTS[PAI[k].a].ph).length>=5,c:"#2F5A8A"},
- {id:"zoo",n:"Little zoo",d:"Make 6 different animals",ok:d=>new Set(d.filter(x=>SUB[x.sub]&&SUB[x.sub].cat==="Animals").map(x=>x.sub)).size>=6,c:"#E2673A"}
+ {id:"zoo",n:"Little zoo",d:"Make 6 different animals",ok:d=>new Set(d.filter(x=>SUB[x.sub]&&ANIMAL_CATS.includes(SUB[x.sub].cat)).map(x=>x.sub)).size>=6,c:"#E2673A"}
 ];
 let confirmReset=false;
 function garden(){
@@ -1595,7 +1939,7 @@ function nextIdea(){
   if(lvlDone>=3&&st.lvl<3)return{text:`You've finished ${lvlDone} ${LEVELS[st.lvl].n} guides. You're ready for ${LEVELS[st.lvl+1].n}!`,set:{lvl:st.lvl+1,view:"studio",step:0}};
   if(missing)return{text:`You haven't tried ${missing.n.toLowerCase()} yet. It's a whole new way to make art.`,set:{tech:missing.id,view:"studio",step:0}};
   const emos=new Set(d.map(x=>x.emo));const e=EMO.find(x=>!emos.has(x.id))||EMO[0];
-  return{text:`Draw something ${e.n.toLowerCase()} today. How would a ${e.n.toLowerCase()} turtle look?`,set:{emo:e.id,sub:"turtle",cat:"Ocean & Bugs",view:"studio",step:0}};
+  return{text:`Draw something ${e.n.toLowerCase()} today. How would a ${e.n.toLowerCase()} turtle look?`,set:{emo:e.id,sub:"turtle",cat:"Water Animals",view:"studio",step:0}};
 }
 
 /* ───────────── events ───────────── */
